@@ -1,112 +1,73 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-
-import Counter from '~/components/starter/counter/counter';
-import Hero from '~/components/starter/hero/hero';
-import Infobox from '~/components/starter/infobox/infobox';
-import Starter from '~/components/starter/next-steps/next-steps';
+import { Bee } from '@bee-icons/qwik'
+import { component$ } from '@builder.io/qwik'
+import { DocumentHead, Link } from '@builder.io/qwik-city'
+import { SVGManager } from '~/components/svg/svg-manager'
 
 export default component$(() => {
   return (
-    <>
-      <Hero />
-      <Starter />
+    <div class="flex items-center justify-between min-h-screen relative">
+      <nav class="absolute w-full top-16 flex justify-end gap-4">
+        {/* // LinkedIn  */}
+        <a
+          class="btn--icon"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Check LinkedIn Profile"
+          href="https://www.linkedin.com/in/manusanchez2/"
+        >
+          <SVGManager svg="linkedin" classCustom="text-capcomBlue h-6 w-6" />
+        </a>
+        {/* // YouTube  */}
+        <a
+          class="btn--icon"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Check YouTube Channel"
+          href="https://www.youtube.com/channel/UCX3IE_OjG20p_AwbX06YAEg"
+        >
+          <SVGManager svg="youtube" classCustom="text-capcomBlue h-6 w-6" />
+        </a>
+        {/* // GitHub  */}
+        <a
+          class="btn--icon"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Check GitHub Repo"
+          href="https://github.com/manuelsanchezweb"
+        >
+          <SVGManager svg="github" classCustom="text-capcomBlue h-6 w-6" />
+        </a>
+      </nav>
 
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-
-      <div class="container container-center container-spacing-xl">
-        <h3>
-          You can <span class="highlight">count</span>
-          <br /> on me
-        </h3>
-        <Counter />
-      </div>
-
-      <div class="container container-flex">
-        <Infobox>
-          <div q:slot="title" class="icon icon-cli">
-            CLI Commands
-          </div>
-          <>
-            <p>
-              <code>npm run dev</code>
-              <br />
-              Starts the development server and watches for changes
-            </p>
-            <p>
-              <code>npm run preview</code>
-              <br />
-              Creates production build and starts a server to preview it
-            </p>
-            <p>
-              <code>npm run build</code>
-              <br />
-              Creates production build
-            </p>
-            <p>
-              <code>npm run qwik add</code>
-              <br />
-              Runs the qwik CLI to add integrations
-            </p>
-          </>
-        </Infobox>
-
-        <div>
-          <Infobox>
-            <div q:slot="title" class="icon icon-apps">
-              Example Apps
-            </div>
-            <p>
-              Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
-              <a href="/demo/todolist">Todo App</a>.
-            </p>
-          </Infobox>
-
-          <Infobox>
-            <div q:slot="title" class="icon icon-community">
-              Community
-            </div>
-            <ul>
-              <li>
-                <span>Questions or just want to say hi? </span>
-                <a href="https://qwik.builder.io/chat" target="_blank">
-                  Chat on discord!
-                </a>
-              </li>
-              <li>
-                <span>Follow </span>
-                <a href="https://twitter.com/QwikDev" target="_blank">
-                  @QwikDev
-                </a>
-                <span> on Twitter</span>
-              </li>
-              <li>
-                <span>Open issues and contribute on </span>
-                <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <span>Watch </span>
-                <a href="https://qwik.builder.io/media/" target="_blank">
-                  Presentations, Podcasts, Videos, etc.
-                </a>
-              </li>
-            </ul>
-          </Infobox>
+      <div class="flex flex-col gap-8 max-w-[550px]">
+        <SVGManager svg="capcom" classCustom="w-[330px] h-auto" />
+        <p class="text-2xl">
+          There are pretty cool games recently and you might not know which one
+          is for you. Let me help you!
+        </p>
+        <div class="flex items-center gap-8">
+          <Link class="btn btn--border" href="/advisor/">
+            Go to the Advisor
+          </Link>
+          <Link class="link" href="/latest-games/">
+            See latest games
+          </Link>
         </div>
       </div>
-    </>
-  );
-});
+
+      <Link href="/advisor/" title="Go to the advisor">
+        <img class="cd" src="./cd.png" alt="cd games" />
+      </Link>
+    </div>
+  )
+})
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Capcom Advisor',
   meta: [
     {
       name: 'description',
       content: 'Qwik site description',
     },
   ],
-};
+}

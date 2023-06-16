@@ -1,4 +1,12 @@
 /**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
  * WHAT IS THIS FILE?
  *
  * Globally applied styles. No matter which components are in the page or matching route,
@@ -22,35 +30,76 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 body {
-  padding: 0;
-  margin: 0;
+  width: 100%;
   line-height: inherit;
+  max-width: 1440px;
+  padding-inline: 20px;
+  margin-inline: auto;
 }
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+@media (min-width: 760px) {
+  body {
+    padding-inline: 70px;
+  }
 }
 
-body {
-  padding: 0;
-  line-height: inherit;
+@media (min-width: 1200px) {
+  body {
+    padding-inline: 120px;
+  }
+}
+
+.cd {
+  cursor: pointer;
+  animation: rotate-cd 8s 2 cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.cd:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotate-cd {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(23140deg);
+  }
+  50% {
+    transform: rotate(23140deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-capcomBlue text-capcomWhite font-bold py-2 px-4 rounded transition-transform hover:scale-105 focus:scale-105;
+  }
+
+  .btn--border {
+    @apply border-2 bg-capcomYellow border-capcomBlue text-capcomBlue;
+  }
+
+  .btn--border--alt {
+    @apply border-2 bg-capcomRed border-capcomWhite text-capcomBlue;
+  }
+
+  .btn--icon {
+    @apply btn btn--border rounded-full h-[40px] w-[40px] flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform p-0;
+  }
+
+  .link {
+    @apply text-capcomBlue font-semibold hover:underline focus:underline;
+  }
 }
