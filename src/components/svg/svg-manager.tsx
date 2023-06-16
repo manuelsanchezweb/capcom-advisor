@@ -1,4 +1,4 @@
-import { JSXNode, component$ } from '@builder.io/qwik'
+import { type JSXNode, component$ } from '@builder.io/qwik'
 import { LogoCapcom } from './logos/logos'
 import { IconGitHub, IconLinkedIn, IconYouTube } from './icons/icons'
 

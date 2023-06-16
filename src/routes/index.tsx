@@ -1,6 +1,5 @@
-import { Bee } from '@bee-icons/qwik'
 import { component$ } from '@builder.io/qwik'
-import { DocumentHead, Link } from '@builder.io/qwik-city'
+import { type DocumentHead, Link } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
 
 export default component$(() => {
