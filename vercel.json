@@ -9,17 +9,5 @@
         }
       ]
     }
-  ],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "npm install --no-optional"
-      }
-    }
-  ],
-  "env": {
-    "NPM_CONFIG_OPTIONAL": "false"
-  }
+  ]
 }
