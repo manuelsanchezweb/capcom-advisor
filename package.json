@@ -40,6 +40,9 @@
     "vite": "4.3.9",
     "vite-tsconfig-paths": "4.2.0"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "dependencies": {
     "@bee-icons/qwik": "^1.0.5"
   }
