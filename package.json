@@ -44,6 +44,6 @@
     "fsevents": "*"
   },
   "dependencies": {
-    "@bee-icons/qwik": "^1.0.5"
+    "@bee-icons/qwik": "^1.0.6"
   }
 }
