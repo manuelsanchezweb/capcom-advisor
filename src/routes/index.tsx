@@ -1,10 +1,24 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, useVisibleTask$ } from '@builder.io/qwik'
 import { type DocumentHead, Link } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
+import { timeline, stagger } from 'motion'
 
 export default component$(() => {
+  useVisibleTask$(() => {
+    const text = document.querySelector('.capcom-text')
+    const cd = document.querySelector('.capcom-cd')
+    if (!text || !cd) return
+
+    const sequence: any = [
+      [text, { opacity: [0, 1], x: [-100, 0] }, { at: 0.2 }],
+      [cd, { opacity: [0, 1], y: [100, 0] }, { at: 0.5 }],
+    ]
+
+    timeline(sequence, {})
+  })
+
   return (
-    <div class="flex items-center justify-between min-h-screen relative">
+    <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen gap-4 relative">
       <nav class="absolute w-full top-16 flex justify-end gap-4">
         {/* // LinkedIn  */}
         <a
@@ -38,13 +52,13 @@ export default component$(() => {
         </a>
       </nav>
 
-      <div class="flex flex-col gap-8 max-w-[550px]">
-        <SVGManager svg="capcom" classCustom="w-[330px] h-auto" />
-        <p class="text-2xl">
+      <div class="capcom-text flex flex-col my-12 gap-8 max-w-[550px]">
+        <SVGManager svg="capcom" classCustom="w-[230px] md:w-[330px] h-auto" />
+        <p class="md:text-2xl">
           There are pretty cool games recently and you might not know which one
           is for you. Let me help you!
         </p>
-        <div class="flex items-center gap-8">
+        <div class="flex flex-col w-full lg:flex-row items-center gap-8">
           <Link class="btn btn--border" href="/advisor/">
             Go to the Advisor
           </Link>
@@ -54,8 +68,8 @@ export default component$(() => {
         </div>
       </div>
 
-      <Link href="/advisor/" title="Go to the advisor">
-        <img class="cd" src="./cd.png" alt="cd games" />
+      <Link class="capcom-cd" title="Go to the advisor">
+        <div class="cd w-[280px] h-[280px] md:w-[450px] md:h-[450px]"></div>
       </Link>
     </div>
   )

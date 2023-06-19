@@ -56,8 +56,14 @@ body {
 }
 
 .cd {
+  background-image: url('../img/cd/cdAll.png');
+  background-size: cover;
   cursor: pointer;
-  animation: rotate-cd 8s 2 cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation: rotate-cd 8s 1 cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.cd:hover {
+  animation-play-state: paused;
 }
 
 .cd:hover {
@@ -67,24 +73,53 @@ body {
 @keyframes rotate-cd {
   0% {
     transform: rotate(0deg);
+    background-image: url('../img/cd/cdAll.png');
   }
-  25% {
-    transform: rotate(23140deg);
+  10% {
+    transform: rotate(0deg);
+    background-image: url('../img/cd/cdAll.png');
+  }
+  20% {
+    transform: rotate(5000deg);
+    background-image: url('../img/cd/cdRE4.png');
+  }
+  30% {
+    transform: rotate(5000deg);
+    background-image: url('../img/cd/cdRE4.png');
+  }
+  40% {
+    transform: rotate(0deg);
+    background-image: url('../img/cd/cdSF6.png');
   }
   50% {
-    transform: rotate(23140deg);
-  }
-  75% {
     transform: rotate(0deg);
+    background-image: url('../img/cd/cdSF6.png');
+  }
+  60% {
+    transform: rotate(5000deg);
+    background-image: url('../img/cd/cdMonsterHunter.png');
+  }
+  70% {
+    transform: rotate(5000deg);
+    background-image: url('../img/cd/cdMonsterHunter.png');
+  }
+  80% {
+    transform: rotate(0deg);
+    background-image: url('../img/cd/cdDMC.png');
+  }
+  90% {
+    transform: rotate(0deg);
+    background-image: url('../img/cd/cdDMC.png');
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(720deg);
+    background-image: url('../img/cd/cdAll.png');
   }
 }
 
 @layer components {
   .btn {
-    @apply bg-capcomBlue text-capcomWhite font-bold py-2 px-4 rounded transition-transform hover:scale-105 focus:scale-105;
+    @apply bg-capcomBlue text-capcomWhite text-center font-bold py-2 px-4 rounded transition-transform hover:scale-105 focus:scale-105;
   }
 
   .btn--border {

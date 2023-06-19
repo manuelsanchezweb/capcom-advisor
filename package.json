@@ -44,6 +44,8 @@
     "fsevents": "*"
   },
   "dependencies": {
-    "@bee-icons/qwik": "^1.0.6"
+    "@bee-icons/qwik": "^1.0.6",
+    "@splidejs/splide": "^4.1.4",
+    "motion": "^10.16.2"
   }
 }
