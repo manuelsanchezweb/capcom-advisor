@@ -51,9 +51,9 @@ export default component$(() => {
         </button>
         <SVGManager
           svg="capcom"
-          classCustom="absolute z-10 top-12 left-1/2 transform -translate-x-1/2 w-[230px] md:w-[330px] h-auto"
+          classCustom="absolute z-10 top-32 lg:top-12 left-1/2 transform -translate-x-1/2 w-[230px] md:w-[330px] h-auto"
         />
-        <div class="splide__track overflow-visible">
+        <div class="splide__track !overflow-visible">
           <ul class="splide__list h-screen">
             {/* // Monster Hunter Rise */}
             <li class="splide__slide h-full w-full">
