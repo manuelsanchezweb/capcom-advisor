@@ -8,24 +8,23 @@ export default component$(() => {
   const numberOfSlides = useSplide()
   const nav = useNavigate()
 
-  if (typeof window === 'undefined') {
-    useVisibleTask$(
-      ({ track }) => {
-        // Options of the splide
-        track(numberOfSlides)
+  useVisibleTask$(
+    ({ track }) => {
+      // Options of the splide
+      track(numberOfSlides)
 
-        const options = {
-          type: 'loop',
-          perMove: 1,
-          perPage: numberOfSlides.value,
-          loop: true,
-          autoplay: true,
-          updateOnMove: true,
-          drag: true,
-          interval: 3000,
-          pagination: false,
-        }
-        // console.log(options)
+      const options = {
+        type: 'loop',
+        perMove: 1,
+        perPage: numberOfSlides.value,
+        loop: true,
+        autoplay: true,
+        updateOnMove: true,
+        drag: true,
+        interval: 3000,
+        pagination: false,
+      }
+      setTimeout(() => {
         const splide = new Splide('.splide', options).mount()
 
         splide.on('resize', function () {
@@ -33,10 +32,10 @@ export default component$(() => {
           const newSplide = new Splide('.splide', options).mount()
           console.log('When resizing, a new splide will be created:', newSplide)
         })
-      },
-      { strategy: 'intersection-observer' }
-    )
-  }
+      }, 50)
+    },
+    { strategy: 'intersection-observer' }
+  )
 
   return (
     <>

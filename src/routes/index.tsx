@@ -1,5 +1,5 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik'
-import { type DocumentHead, Link } from '@builder.io/qwik-city'
+import { type DocumentHead } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { timeline } from 'motion'
 
