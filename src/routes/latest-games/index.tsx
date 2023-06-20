@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import { component$, useVisibleTask$ } from '@builder.io/qwik'
 import Splide from '@splidejs/splide'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { useSplide } from '~/hooks/useSplide'
@@ -28,6 +28,7 @@ export default component$(() => {
       splide.on('resize', function () {
         splide.destroy()
         const newSplide = new Splide('.splide', options).mount()
+        console.log('When resizing, a new splide will be created:', newSplide)
       })
     },
     { strategy: 'intersection-observer' }
