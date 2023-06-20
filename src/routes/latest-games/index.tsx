@@ -6,6 +6,7 @@ import { useSplide } from '~/hooks/useSplide'
 
 export default component$(() => {
   const numberOfSlides = useSplide()
+  console.log('numberOfSlides', numberOfSlides.value)
   const nav = useNavigate()
 
   useVisibleTask$(
@@ -39,8 +40,13 @@ export default component$(() => {
 
   return (
     <>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+      />
+
       <section
-        class="splide relative min-h-screen"
+        class="splide relative min-h-screen max-w-screen overflow-hidden"
         aria-label="Latest Capcom Games"
       >
         <button
@@ -59,24 +65,26 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://www.monsterhunter.com/rise-sunbreak/platform.html"
                 title='Check "Monster Hunter Rise" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgMonsterHunter.png" alt="MonsterHunter" />
               </a>
             </li>
             {/* // DMC  */}
             <li class="splide__slide h-full w-full">
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://www.devilmaycry.com/5/"
                 title='Check "Devil May Cry 5 Special Edition" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgDMC.png" alt="DMC" />
               </a>
             </li>
@@ -84,12 +92,13 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://www.residentevil.com/re4/en-uk/"
                 title='Check "Resident Evil 4" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgRE4.png" alt="RE4" />
               </a>
             </li>
@@ -97,12 +106,13 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://www.streetfighter.com/6/en-uk"
                 title='Check "Street Fighter 6" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgSF6.png" alt="SF6" />
               </a>
             </li>
@@ -110,12 +120,13 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://www.exoprimal.com/en-uk/"
                 title='Check "Exoprimal" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgExoprimal.png" alt="Exoprimal" />
               </a>
             </li>
@@ -123,12 +134,13 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer w-full h-full flex filter grayscale-[90%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
                 href="https://megaman.capcom.com/"
                 title='Check "Megaman Zero/ZX" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
                 <img src="../img/lgMegaman.png" alt="Megaman" />
               </a>
             </li>
