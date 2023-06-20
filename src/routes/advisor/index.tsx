@@ -85,8 +85,8 @@ export const Step1 = component$(
     onNextStep,
     handlePreviousStep,
   }: {
-    onNextStep: () => void
-    handlePreviousStep: () => void
+    onNextStep: any
+    handlePreviousStep: any
   }) => {
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo')
@@ -166,8 +166,8 @@ export const Step2 = component$(
     onNextStep,
     handlePreviousStep,
   }: {
-    onNextStep: () => void
-    handlePreviousStep: () => void
+    onNextStep: any
+    handlePreviousStep: any
   }) => {
     useVisibleTask$(() => {
       const text = document.querySelector('.capcom-text')
@@ -224,9 +224,9 @@ export const Step3 = component$(
     onNextStep,
     handlePreviousStep,
   }: {
-    onNextStep: () => void
-    onEndApp: () => void
-    handlePreviousStep: () => void
+    onNextStep: any
+    onEndApp: any
+    handlePreviousStep: any
   }) => {
     return (
       <>
