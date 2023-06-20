@@ -39,7 +39,10 @@ export default component$(() => {
 
   return (
     <>
-      <section class="splide relative" aria-label="Latest Capcom Games">
+      <section
+        class="splide relative min-h-screen"
+        aria-label="Latest Capcom Games"
+      >
         <button
           class="btn btn--border absolute top-12 left-4 z-10 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
           onClick$={() => nav('/')}
@@ -50,7 +53,7 @@ export default component$(() => {
           svg="capcom"
           classCustom="absolute z-10 top-12 left-1/2 transform -translate-x-1/2 w-[230px] md:w-[330px] h-auto"
         />
-        <div class="splide__track">
+        <div class="splide__track overflow-visible">
           <ul class="splide__list h-screen">
             {/* // Monster Hunter Rise */}
             <li class="splide__slide h-full w-full">
