@@ -1,13 +1,13 @@
 import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
-import { useNavigate } from '@builder.io/qwik-city'
+// import { useNavigate } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { timeline, stagger } from 'motion'
-import { useGlobalState } from '~/ctx/ctx'
+// import { useGlobalState } from '~/ctx/ctx'
 
 export default component$(() => {
-  const nav = useNavigate()
-  const ctx = useGlobalState()
-  const { genre } = ctx
+  // const nav = useNavigate()
+  // const ctx = useGlobalState()
+  // const { genre } = ctx
   const step = useSignal(1)
 
   const handleNextStep = $(() => {
@@ -115,7 +115,7 @@ export const Step1 = component$(
       <>
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={handlePreviousStep}
+          onClick$={$(() => handlePreviousStep())}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -152,9 +152,9 @@ export const Step1 = component$(
         </p>
         <button
           class="btn btn--border btn--next opacity-0"
-          onClick$={() => {
+          onClick$={$(() => {
             onNextStep() // Call the onNextStep callback to move to the next step
-          }}
+          })}
         >
           Next step
         </button>
@@ -188,7 +188,7 @@ export const Step2 = component$(
       <>
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={handlePreviousStep}
+          onClick$={$(() => handlePreviousStep())}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -215,9 +215,9 @@ export const Step2 = component$(
         </p>
         <button
           class="btn btn--border btn--next"
-          onClick$={() => {
+          onClick$={$(() => {
             onNextStep() // Call the onNextStep callback to move to the next step
-          }}
+          })}
         >
           Next step
         </button>
@@ -229,7 +229,6 @@ export const Step2 = component$(
 export const Step3 = component$(
   ({
     onNextStep,
-    onEndApp,
     handlePreviousStep,
   }: {
     onNextStep: () => void
@@ -241,7 +240,7 @@ export const Step3 = component$(
         {' '}
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={handlePreviousStep}
+          onClick$={$(() => handlePreviousStep())}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -268,9 +267,9 @@ export const Step3 = component$(
         </p>
         <button
           class="btn btn--border btn--next"
-          onClick$={() => {
+          onClick$={$(() => {
             onNextStep() // Call the onNextStep callback to move to the next step
-          }}
+          })}
         >
           Next step
         </button>
