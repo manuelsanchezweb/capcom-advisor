@@ -70,9 +70,9 @@ export default component$(() => {
             <a class="btn btn--border" href="/advisor">
               Go to the Advisor
             </a>
-            <Link class="link" href="/latest-games/">
+            <a class="link" href="/latest-games/">
               See latest games
-            </Link>
+            </a>
           </div>
         </div>
 

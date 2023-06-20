@@ -8,19 +8,23 @@ export default component$(() => {
   const nav = useNavigate()
 
   useVisibleTask$(() => {
+    const logo = document.querySelector('.capcom-logo')
     const title = document.querySelector('h1')
     const paragraphs = document.querySelectorAll('p')
     const button = document.querySelector('.btn--next')
+    const back = document.querySelector('.btn--back')
     if (!title || !paragraphs || !button) return
 
     const sequence: any = [
-      [title, { opacity: [0, 1], y: [-50, 0] }, { at: 0.1 }],
+      [logo, { opacity: [0, 1], y: [-50, 0] }, { at: 0.1 }],
+      [title, { opacity: [0, 1], y: [-50, 0] }, { at: 0.3 }],
       [
         paragraphs,
         { opacity: [0, 1], y: [-50, 0] },
         { duration: 0.3, delay: stagger(0.2) },
       ],
-      [button, { opacity: [0, 1], y: [-50, 0] }, { at: 0.9 }],
+      [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
+      [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
     ]
 
     timeline(sequence, {})
@@ -30,7 +34,7 @@ export default component$(() => {
     <div class="flex flex-col items-center min-h-screen w-full max-w-[1440px] px-5 mx-auto md:px-16 lg:px-[120px]">
       <div class="w-full relative min-h-screen">
         <button
-          class="btn btn--border absolute top-12 left-0 rounded-full h-[35px] w-[35px] flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
+          class="btn btn--border btn--back opacity-0 absolute top-12 left-0 rounded-full h-[35px] w-[35px] flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
           onClick$={() => nav('/')}
         >
           <Bee customClass="text-capcomBlue" icon="chevron-left" />
@@ -39,7 +43,7 @@ export default component$(() => {
         <div class="flex flex-col min-h-screen items-center justify-center gap-8 text-center max-w-[500px] mx-auto">
           <SVGManager
             svg="capcom"
-            classCustom="w-[230px] md:w-[330px] h-auto"
+            classCustom="capcom-logo w-[230px] md:w-[330px] h-auto opacity-0"
           />
           <h1 class="text-xl md:text-3xl font-bold opacity-0">
             Welcome to the Capcom Advisor
