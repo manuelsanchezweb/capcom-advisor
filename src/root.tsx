@@ -7,7 +7,6 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 
 import './global.css'
-import './splide.min.css'
 
 export default component$(() => {
   /**
