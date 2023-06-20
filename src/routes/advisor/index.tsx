@@ -115,7 +115,7 @@ export const Step1 = component$(
       <>
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={$(() => handlePreviousStep())}
+          onClick$={() => handlePreviousStep()}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -152,9 +152,7 @@ export const Step1 = component$(
         </p>
         <button
           class="btn btn--border btn--next opacity-0"
-          onClick$={$(() => {
-            onNextStep() // Call the onNextStep callback to move to the next step
-          })}
+          onClick$={() => onNextStep()}
         >
           Next step
         </button>
@@ -188,7 +186,7 @@ export const Step2 = component$(
       <>
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={$(() => handlePreviousStep())}
+          onClick$={() => handlePreviousStep()}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -213,12 +211,7 @@ export const Step2 = component$(
           nulla officiis cum quasi ea officia doloribus cumque. Aspernatur, quia
           temporibus!
         </p>
-        <button
-          class="btn btn--border btn--next"
-          onClick$={$(() => {
-            onNextStep() // Call the onNextStep callback to move to the next step
-          })}
-        >
+        <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step
         </button>
       </>
@@ -240,7 +233,7 @@ export const Step3 = component$(
         {' '}
         <button
           class="btn btn--border p-0 text-capcomBlue btn--back absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={$(() => handlePreviousStep())}
+          onClick$={() => handlePreviousStep()}
         >
           <svg
             class="bee bee-icons text-capcomBlue"
@@ -265,12 +258,7 @@ export const Step3 = component$(
           nulla officiis cum quasi ea officia doloribus cumque. Aspernatur, quia
           temporibus!
         </p>
-        <button
-          class="btn btn--border btn--next"
-          onClick$={$(() => {
-            onNextStep() // Call the onNextStep callback to move to the next step
-          })}
-        >
+        <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step
         </button>
       </>
