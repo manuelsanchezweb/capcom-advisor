@@ -1,25 +1,29 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik'
 import { type DocumentHead, Link } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
-import { timeline, stagger } from 'motion'
+import { timeline } from 'motion'
 
 export default component$(() => {
   useVisibleTask$(() => {
     const text = document.querySelector('.capcom-text')
     const cd = document.querySelector('.capcom-cd')
+    const nav = document.querySelector('.capcom-nav')
+    const footer = document.querySelector('.capcom-footer')
     if (!text || !cd) return
 
     const sequence: any = [
-      [text, { opacity: [0, 1], x: [-100, 0] }, { at: 0.2 }],
-      [cd, { opacity: [0, 1], y: [100, 0] }, { at: 0.5 }],
+      [text, { opacity: [0, 1], x: [-100, 0] }, { at: 0.1 }],
+      [cd, { opacity: [0, 1], y: [100, 0] }, { at: 0.3 }],
+      [nav, { opacity: [0, 1], y: [100, 0] }, { at: 0.5 }],
+      [footer, { opacity: [0, 1], y: [-100, 0] }, { at: 0.7 }],
     ]
 
     timeline(sequence, {})
   })
 
   return (
-    <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen gap-4 relative">
-      <nav class="absolute w-full top-16 flex justify-end gap-4">
+    <div class="flex flex-col min-h-screen w-full max-w-[1440px] px-5 mx-auto md:px-16 lg:px-[120px]">
+      <nav class="capcom-nav opacity-0 w-full flex justify-end gap-4 mt-12">
         {/* // LinkedIn  */}
         <a
           class="btn--icon"
@@ -52,25 +56,58 @@ export default component$(() => {
         </a>
       </nav>
 
-      <div class="capcom-text flex flex-col my-12 gap-8 max-w-[550px]">
-        <SVGManager svg="capcom" classCustom="w-[230px] md:w-[330px] h-auto" />
-        <p class="md:text-2xl">
-          There are pretty cool games recently and you might not know which one
-          is for you. Let me help you!
-        </p>
-        <div class="flex flex-col w-full lg:flex-row items-center gap-8">
-          <Link class="btn btn--border" href="/advisor/">
-            Go to the Advisor
-          </Link>
-          <Link class="link" href="/latest-games/">
-            See latest games
-          </Link>
+      <main class="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-[70vh] gap-4 relative mb-8">
+        <div class="capcom-text opacity-0 flex flex-col items-center text-center lg:items-start lg:text-left my-12 gap-8 max-w-[550px]">
+          <SVGManager
+            svg="capcom"
+            classCustom="w-[230px] md:w-[330px] h-auto"
+          />
+          <p class="md:text-2xl">
+            There are pretty cool games recently and you might not know which
+            one is for you. Let me help you!
+          </p>
+          <div class="flex flex-col w-full lg:flex-row items-center gap-8">
+            <a class="btn btn--border" href="/advisor">
+              Go to the Advisor
+            </a>
+            <Link class="link" href="/latest-games/">
+              See latest games
+            </Link>
+          </div>
         </div>
-      </div>
 
-      <Link class="capcom-cd" title="Go to the advisor">
-        <div class="cd w-[280px] h-[280px] md:w-[450px] md:h-[450px]"></div>
-      </Link>
+        <a
+          href="/advisor"
+          class="capcom-cd opacity-0"
+          title="Go to the advisor"
+        >
+          <div class="cd w-[280px] h-[280px] md:w-[450px] md:h-[450px]"></div>
+        </a>
+      </main>
+      <footer class="capcom-footer opacity-0 w-full flex flex-col gap-4 my-12 mt-auto items-center text-center">
+        <p>
+          This is an unofficial app created with 💛 by{' '}
+          <a
+            rel="nofollow noopener"
+            target="_blank"
+            title="Check Page of manuelsanchezweb"
+            href="https://github.com/manuelsanchezweb"
+          >
+            manuelsanchezweb
+          </a>
+        </p>
+        <p>
+          All the images and content are property of{' '}
+          <a
+            rel="nofollow noopener"
+            target="_blank"
+            title="Check General Capcom Page"
+            href="https://www.capcom.com/"
+          >
+            Capcom
+          </a>
+        </p>
+      </footer>
     </div>
   )
 })

@@ -362,3 +362,23 @@
   opacity: 0.6;
   transition: opacity 0.3s ease-in-out;
 }
+
+.splide__slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.splide__arrow {
+  background: #ffcb08 !important;
+  border: 1px solid #2a5daa !important;
+}
+
+.splide__arrow svg {
+  fill: #2a5daa !important;
+}
+
+.splide__slide a {
+  cursor: pointer;
+  z-index: 1;
+}

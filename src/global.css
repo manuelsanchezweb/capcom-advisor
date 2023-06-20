@@ -35,26 +35,6 @@ html {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-body {
-  width: 100%;
-  line-height: inherit;
-  max-width: 1440px;
-  padding-inline: 20px;
-  margin-inline: auto;
-}
-
-@media (min-width: 760px) {
-  body {
-    padding-inline: 70px;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    padding-inline: 120px;
-  }
-}
-
 .cd {
   background-image: url('../img/cd/cdAll.png');
   background-size: cover;
@@ -137,4 +117,8 @@ body {
   .link {
     @apply text-capcomBlue font-semibold hover:underline focus:underline;
   }
+}
+
+a:not([class]) {
+  @apply text-capcomBlue font-semibold hover:underline focus:underline;
 }

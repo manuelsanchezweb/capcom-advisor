@@ -12,6 +12,13 @@ module.exports = {
         capcomGray: '#D9D9D9',
         capcomWhite: '#FFFFFF',
       },
+      grayscale: {
+        50: '50%',
+        60: '60%',
+        70: '70%',
+        80: '80%',
+        90: '90%',
+      },
     },
   },
   plugins: [],

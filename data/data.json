@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Resident Evil 4 Remake",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Montes nascetur ridiculus mus mauris.",
+    "categories": ["action, shooting, adventure"],
+    "urlOfficial": "https://www.google.com",
+    "platforms": [
+      {
+        "name": "ps5",
+        "url": "https://www.google.com"
+      },
+      {
+        "name": "ps4",
+        "url": "https://www.google.com"
+      }
+    ],
+    "assets": {
+      "imgBig": {
+        "url": "",
+        "copyrightUrl": ""
+      },
+      "imgSmall": {
+        "url": "",
+        "copyrightUrl": ""
+      }
+    }
+  }
+]
