@@ -1,6 +1,6 @@
 import {
   $,
-  PropFunction,
+  type PropFunction,
   component$,
   useSignal,
   useVisibleTask$,
@@ -248,17 +248,17 @@ export const Step2 = component$(
               name="fav_language"
               value="action"
             />
-              <label for="action">action</label>
+            <label for="action">action</label>
           </li>
           <li>
-             {' '}
+            {' '}
             <input
               type="radio"
               id="shooter"
               name="fav_language"
               value="shooter"
             />
-              <label for="shooter">shooter</label>
+            <label for="shooter">shooter</label>
           </li>
           <li>
             <input
@@ -267,9 +267,8 @@ export const Step2 = component$(
               name="fav_language"
               value="adventure"
             />
-              <label for="adventure">adventure</label>
+            <label for="adventure">adventure</label>
           </li>
-           
         </ul>
         <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step
@@ -365,17 +364,17 @@ export const Step3 = component$(
               name="fav_language"
               value="ps5"
             />
-              <label for="ps5">ps5</label>
+            <label for="ps5">ps5</label>
           </li>
           <li>
-             {' '}
+            {' '}
             <input
               type="radio"
               id="switch"
               name="fav_language"
               value="switch"
             />
-              <label for="switch">switch</label>
+            <label for="switch">switch</label>
           </li>
           <li>
             <input
@@ -384,9 +383,8 @@ export const Step3 = component$(
               name="fav_language"
               value="xbox-one"
             />
-              <label for="xbox-one">xbox-one</label>
+            <label for="xbox-one">xbox-one</label>
           </li>
-           
         </ul>
         <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step
