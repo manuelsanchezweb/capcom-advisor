@@ -1,10 +1,4 @@
-import {
-  $,
-  type PropFunction,
-  component$,
-  useSignal,
-  useVisibleTask$,
-} from '@builder.io/qwik'
+import { $, component$, useSignal } from '@builder.io/qwik'
 // import { useNavigate } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { timeline, stagger } from 'motion'
