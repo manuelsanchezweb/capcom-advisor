@@ -39,6 +39,9 @@ export default component$(() => {
     } else if (step.value === 3) {
       // Move back to Step 2 from Step 3
       step.value = 2
+    } else if (step.value === 4) {
+      // Move back to Step 3 from Step 4
+      step.value = 3
     }
   })
 
