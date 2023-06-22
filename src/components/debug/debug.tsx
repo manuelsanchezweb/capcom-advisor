@@ -5,7 +5,7 @@ export const Debug = component$(() => {
   const ctx = useGlobalState()
   const { genre, platform, game } = ctx
 
-  const isDebugOpened = useSignal(false)
+  const isDebugOpened = useSignal(true)
 
   return (
     <>
@@ -17,7 +17,7 @@ export const Debug = component$(() => {
           >
             X
           </button>
-          <h2 class="text-2xl mb-5">Context</h2>
+          <div class="text-2xl mb-5">Context</div>
           <hr class="bg-black h-[5px] my-2" />
           <ul>
             <li>This is the genre: {genre}</li>

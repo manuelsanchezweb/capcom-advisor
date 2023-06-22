@@ -6,7 +6,6 @@ import { useSplide } from '~/hooks/useSplide'
 
 export default component$(() => {
   const numberOfSlides = useSplide()
-  console.log('numberOfSlides', numberOfSlides.value)
   const nav = useNavigate()
 
   useVisibleTask$(

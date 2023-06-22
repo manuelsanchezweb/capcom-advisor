@@ -3,7 +3,7 @@ import './splide.min.css'
 
 export default component$(() => {
   return (
-    <div class="max-w-[1600px] mx-auto">
+    <div class="mx-auto">
       <Slot />
     </div>
   )
