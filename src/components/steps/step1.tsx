@@ -4,6 +4,7 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik'
 import { timeline, stagger } from 'motion'
+import { useGlobalState } from '~/ctx/ctx'
 
 export const Step1 = component$(
   ({
@@ -13,10 +14,13 @@ export const Step1 = component$(
     onNextStep: PropFunction<() => void>
     handlePreviousStep: PropFunction<() => void>
   }) => {
+    const ctx = useGlobalState()
+
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo')
       const title = document.querySelector('h2')
       const paragraphs = document.querySelectorAll('p')
+      const name = document.querySelectorAll('.capcom-name')
       const button = document.querySelector('.btn--next')
       const back = document.querySelector('.btn--back')
       if (!title || !paragraphs || !button) return
@@ -29,8 +33,9 @@ export const Step1 = component$(
           { opacity: [0, 1], y: [-50, 0] },
           { duration: 0.3, delay: stagger(0.2) },
         ],
-        [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
-        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
+        [name, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
+        [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
+        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
       ]
 
       timeline(sequence, {})
@@ -89,8 +94,23 @@ export const Step1 = component$(
         <p class="text-md md:text-xl opacity-0">
           But interviews should go both sides, right?
         </p>
+        <div class="capcom-name flex gap-4 flex-col items-start opacity-0">
+          <label for="name">Your name:</label>
+          <input
+            class="border border-black rounded-sm py-3 px-6"
+            placeholder="Max Mustermann"
+            type="text"
+            name="name"
+            id="name"
+            onInput$={(e: InputEvent & { target: HTMLInputElement }) => {
+              ctx.name = e.target.value
+            }}
+            value={ctx.name}
+          />
+        </div>
         <button
-          class="btn btn--border btn--next opacity-0"
+          disabled={!ctx.name}
+          class="btn btn--border btn--next opacity-0 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick$={() => onNextStep()}
         >
           Next step

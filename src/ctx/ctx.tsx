@@ -6,6 +6,7 @@ import {
 } from '@builder.io/qwik'
 
 interface UserStore {
+  name: string
   genre: string
   platform: string
   game: string
@@ -14,14 +15,12 @@ interface UserStore {
 const UserContext = createContextId<UserStore>('user-context')
 
 export const useProvideGlobalState = () => {
-  const store = useStore(
-    {
-      genre: 'Action',
-      platform: 'PC',
-      game: 'GTA V',
-    },
-    { deep: true }
-  )
+  const store = useStore({
+    name: '',
+    genre: 'Action',
+    platform: 'PC',
+    game: 'GTA V',
+  })
 
   useContextProvider(UserContext, store)
 }

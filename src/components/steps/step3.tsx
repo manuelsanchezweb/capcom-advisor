@@ -4,6 +4,16 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik'
 import { timeline, stagger } from 'motion'
+import { useGlobalState } from '~/ctx/ctx'
+
+const PLATFORMS = [
+  'PC',
+  'PS4',
+  'PS5',
+  'Xbox One',
+  'Xbox Series X',
+  'Nintendo Switch',
+]
 
 export const Step3 = component$(
   ({
@@ -13,6 +23,8 @@ export const Step3 = component$(
     onNextStep: PropFunction<() => void>
     handlePreviousStep: PropFunction<() => void>
   }) => {
+    const ctx = useGlobalState()
+
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo')
       const title = document.querySelector('h2')
@@ -97,36 +109,21 @@ export const Step3 = component$(
         <p class="text-md md:text-xl opacity-0">
           You know now how I spend my time, but... how do you usually chill?
         </p>
-        <ul class="capcom-platforms">
-          <li>
-            <input
-              checked
-              type="radio"
-              id="ps5"
-              name="fav_language"
-              value="ps5"
-            />
-            <label for="ps5">ps5</label>
-          </li>
-          <li>
-            {' '}
-            <input
-              type="radio"
-              id="switch"
-              name="fav_language"
-              value="switch"
-            />
-            <label for="switch">switch</label>
-          </li>
-          <li>
-            <input
-              type="radio"
-              id="xbox-one"
-              name="fav_language"
-              value="xbox-one"
-            />
-            <label for="xbox-one">xbox-one</label>
-          </li>
+        <ul class="capcom-platforms flex flex-wrap gap-5 max-w-[350px] opacity-0">
+          {PLATFORMS.map((platform) => (
+            <li
+              class={{
+                '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
+                  ctx.platform === platform,
+                'cursor-pointer': ctx.platform !== platform,
+                'px-6 py-3 border border-capcomBlue bg-capcomYellow hover:text-capcomWhite hover:bg-capcomBlue':
+                  true,
+              }}
+              onClick$={() => (ctx.platform = platform)}
+            >
+              {platform}
+            </li>
+          ))}
         </ul>
         <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step

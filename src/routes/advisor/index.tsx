@@ -1,14 +1,11 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
-// import { useNavigate } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
-import { timeline, stagger } from 'motion'
 import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
-// import { useGlobalState } from '~/ctx/ctx'
+import { useGlobalState } from '~/ctx/ctx'
 
 export default component$(() => {
-  // const nav = useNavigate()
-  // const ctx = useGlobalState()
+  const ctx = useGlobalState()
   // const { genre } = ctx
   const step = useSignal(1)
 
@@ -49,7 +46,10 @@ export default component$(() => {
     step.value = 1 // Reset the current step to the initial step
     // Reset your context here by updating the necessary state values
     // For example, you can set `genre` to an empty string or null
-    // ctx.setGenre('');
+    ctx.name = ''
+    ctx.genre = ''
+    ctx.platform = ''
+    ctx.game = ''
   })
 
   return (

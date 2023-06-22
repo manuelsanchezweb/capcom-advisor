@@ -64,7 +64,7 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://www.monsterhunter.com/rise-sunbreak/platform.html"
                 title='Check "Monster Hunter Rise" Game Page'
                 target="_blank"
@@ -77,7 +77,7 @@ export default component$(() => {
             {/* // DMC  */}
             <li class="splide__slide h-full w-full">
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://www.devilmaycry.com/5/"
                 title='Check "Devil May Cry 5 Special Edition" Game Page'
                 target="_blank"
@@ -91,7 +91,7 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://www.residentevil.com/re4/en-uk/"
                 title='Check "Resident Evil 4" Game Page'
                 target="_blank"
@@ -105,7 +105,7 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://www.streetfighter.com/6/en-uk"
                 title='Check "Street Fighter 6" Game Page'
                 target="_blank"
@@ -119,7 +119,7 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://www.exoprimal.com/en-uk/"
                 title='Check "Exoprimal" Game Page'
                 target="_blank"
@@ -133,7 +133,7 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale-[125%] hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
                 href="https://megaman.capcom.com/"
                 title='Check "Megaman Zero/ZX" Game Page'
                 target="_blank"

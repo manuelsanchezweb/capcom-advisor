@@ -4,6 +4,16 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik'
 import { timeline, stagger } from 'motion'
+import { useGlobalState } from '~/ctx/ctx'
+
+const GENRES = [
+  'Action',
+  'Adventure',
+  'RPG',
+  'Strategy',
+  'Simulation',
+  'Sports',
+]
 
 export const Step2 = component$(
   ({
@@ -13,12 +23,14 @@ export const Step2 = component$(
     onNextStep: PropFunction<() => void>
     handlePreviousStep: PropFunction<() => void>
   }) => {
+    const ctx = useGlobalState()
+
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo')
       const title = document.querySelector('h2')
       const paragraphs = document.querySelectorAll('p')
       const button = document.querySelector('.btn--next')
-      const categories = document.querySelectorAll('.capcom-categories')
+      const genres = document.querySelectorAll('.capcom-genres')
       const back = document.querySelector('.btn--back')
       if (!title || !paragraphs || !button) return
 
@@ -30,7 +42,7 @@ export const Step2 = component$(
           { opacity: [0, 1], y: [-50, 0] },
           { duration: 0.3, delay: stagger(0.2) },
         ],
-        [categories, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
+        [genres, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
         [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
         [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
       ]
@@ -90,36 +102,21 @@ export const Step2 = component$(
         <p class="text-md md:text-xl opacity-0">
           But again, where were we... and yeah, your favorite genre?
         </p>
-        <ul class="capcom-categories">
-          <li>
-            <input
-              checked
-              type="radio"
-              id="action"
-              name="fav_language"
-              value="action"
-            />
-            <label for="action">action</label>
-          </li>
-          <li>
-            {' '}
-            <input
-              type="radio"
-              id="shooter"
-              name="fav_language"
-              value="shooter"
-            />
-            <label for="shooter">shooter</label>
-          </li>
-          <li>
-            <input
-              type="radio"
-              id="adventure"
-              name="fav_language"
-              value="adventure"
-            />
-            <label for="adventure">adventure</label>
-          </li>
+        <ul class="capcom-genres flex flex-wrap gap-5 max-w-[350px] opacity-0">
+          {GENRES.map((genre) => (
+            <li
+              class={{
+                '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
+                  ctx.genre === genre,
+                'cursor-pointer': ctx.genre !== genre,
+                'px-6 py-3 border border-capcomBlue bg-capcomYellow hover:text-capcomWhite hover:bg-capcomBlue':
+                  true,
+              }}
+              onClick$={() => (ctx.genre = genre)}
+            >
+              {genre}
+            </li>
+          ))}
         </ul>
         <button class="btn btn--border btn--next" onClick$={() => onNextStep()}>
           Next step
