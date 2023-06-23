@@ -19,8 +19,9 @@ export const useGames = routeLoader$(async () => {
 
 export default component$(() => {
   const ctx = useGlobalState()
-  const step = useSignal(4)
+  const step = useSignal(1)
   const { value: games } = useGames()
+  console.log('These are all the games we have:', games)
 
   useVisibleTask$(({ track }) => {
     track(step)
