@@ -2,13 +2,10 @@ import {
   type PropFunction,
   component$,
   useVisibleTask$,
-  $,
-  Signal,
 } from '@builder.io/qwik'
-import { timeline, stagger, TimelineDefinition } from 'motion'
+import { timeline, stagger, type TimelineDefinition } from 'motion'
+import { URL } from '~/constants/constants'
 import { useGlobalState } from '~/ctx/ctx'
-
-let URL = import.meta.env.PUBLIC_APP_URL
 
 export const Step4 = component$(
   ({ onEndApp }: { onEndApp: PropFunction<() => void> }) => {
@@ -16,8 +13,7 @@ export const Step4 = component$(
     const { games } = ctx
     console.log('games', games)
 
-    useVisibleTask$(({ cleanup }) => {
-      console.log('Here')
+    useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo') as HTMLElement
       const title = document.querySelector('h2')
       const options = document.querySelectorAll(

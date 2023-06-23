@@ -4,7 +4,7 @@ import {
   useVisibleTask$,
   $,
 } from '@builder.io/qwik'
-import { timeline, stagger } from 'motion'
+import { timeline, stagger, TimelineDefinition } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
 import { BackButton } from '../back-button/back-button'
 import { PLATFORMS } from '~/constants/constants'
@@ -21,15 +21,15 @@ export const Step3 = component$(
     const ctx = useGlobalState()
 
     useVisibleTask$(() => {
-      const logo = document.querySelector('.capcom-logo')
+      const logo = document.querySelector('.capcom-logo') as HTMLElement
       const title = document.querySelector('h2')
       const paragraphs = document.querySelectorAll('p')
       const platforms = document.querySelectorAll('.capcom-platforms')
-      const button = document.querySelector('.btn--next')
-      const back = document.querySelector('.btn--back')
+      const button = document.querySelector('.btn--next') as HTMLButtonElement
+      const back = document.querySelector('.btn--back') as HTMLButtonElement
       if (!title || !paragraphs || !button) return
 
-      const sequence: any = [
+      const sequence: TimelineDefinition = [
         [logo, { opacity: [0, 1], y: [-50, 0] }, { at: 0.1 }],
         [title, { opacity: [0, 1], y: [-50, 0] }, { at: 0.3 }],
         [

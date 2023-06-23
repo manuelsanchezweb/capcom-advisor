@@ -1,4 +1,4 @@
-import { SVGType } from '~/components/svg/svg-manager'
+import { type SVGType } from '~/components/svg/svg-manager'
 
 type Platform = {
   id: number
@@ -89,3 +89,5 @@ export const GENRES: Genre[] = [
     slug: 'horror',
   },
 ]
+
+export const URL = import.meta.env.PUBLIC_APP_URL

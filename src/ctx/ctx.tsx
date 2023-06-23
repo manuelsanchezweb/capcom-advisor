@@ -4,7 +4,7 @@ import {
   useContextProvider,
   useStore,
 } from '@builder.io/qwik'
-import { Game } from '~/types/types'
+import { type Game } from '~/types/types'
 
 interface UserStore {
   name: string

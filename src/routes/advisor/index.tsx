@@ -4,11 +4,7 @@ import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
 import { Navigation } from '~/components/navigation/navigation'
-import {
-  routeLoader$,
-  type DocumentHead,
-  useNavigate,
-} from '@builder.io/qwik-city'
+import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { getGames } from '~/api/getGames'
 import { getGamesForUser } from '~/functions/functions'
 
@@ -28,20 +24,17 @@ export default component$(() => {
 
   useVisibleTask$(({ track }) => {
     track(step)
+
     ctx.games = getGamesForUser(games, ctx.genre, ctx.platform)
   })
 
   const handleNextStep = $(() => {
     if (step.value === 1) {
-      // Additional logic for Step 1 completion
-      step.value = 2 // Move to Step 2
-      console.log('step', step.value)
+      step.value = 2
     } else if (step.value === 2) {
-      // Additional logic for Step 2 completion
-      step.value = 3 // Move to Step 3
+      step.value = 3
     } else if (step.value === 3) {
-      // Additional logic for Step 3 completion
-      step.value = 4 // Move back to Step 1
+      step.value = 4
     }
   })
 
@@ -62,12 +55,11 @@ export default component$(() => {
   })
 
   const handleEndApp = $(() => {
-    step.value = 1 // Reset the current step to the initial step
-    // Reset your context here by updating the necessary state values
-    // For example, you can set `genre` to an empty string or null
+    step.value = 1
+
     ctx.name = ''
     ctx.genre = 'action'
-    ctx.platform = 'steam'
+    ctx.platform = 'ps5'
     ctx.games = []
   })
 
