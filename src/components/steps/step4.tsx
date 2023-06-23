@@ -4,14 +4,20 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik'
 import { timeline, stagger, type TimelineDefinition } from 'motion'
+import { getGames } from '~/api/getGames'
 import { URL } from '~/constants/constants'
 import { useGlobalState } from '~/ctx/ctx'
+import { Game } from '~/types/types'
 
 export const Step4 = component$(
   ({ onEndApp }: { onEndApp: PropFunction<() => void> }) => {
     const ctx = useGlobalState()
     const { games } = ctx
     console.log('games', games)
+
+    // const allGames = useResource$<Game[]>(async () => {
+    //   return getGames()
+    // })
 
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo') as HTMLElement
@@ -46,6 +52,13 @@ export const Step4 = component$(
         <div class="capcom-options opacity-0">
           {games.length > 0 ? (
             <ul class="w-full">
+              {/* <Resource
+                value={allGames}
+                onResolved={(weather) => {
+                  console.log('This is the waether', weather)
+                  return <div>Temperature: hola</div>
+                }}
+              /> */}
               {games.map((game) => (
                 <li
                   key={game.id}

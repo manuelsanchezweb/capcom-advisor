@@ -68,5 +68,32 @@
         "copyrightUrl": "https://www.residentevil.com/re4/en-uk/"
       }
     }
+  },
+  {
+    "id": 3,
+    "name": "Devil May Cry 5 Special Edition",
+    "description": "Devil May Cry is back. The legendary stylish action game is better than ever in the ultimate version of this multi-award winning hit. New features include the addition of Dante's brother and arch-rival, Vergil, as a playable character, Legendary Dark Knight mode, Turbo mode and Ray Tracing support.",
+    "genres": ["action", "adventure"],
+    "urlOfficial": "https://www.devilmaycry.com/5se/",
+    "platforms": [
+      {
+        "name": "ps5",
+        "url": "https://www.devilmaycry.com/5se/"
+      },
+      {
+        "name": "xbox-series",
+        "url": "https://www.devilmaycry.com/5se/"
+      }
+    ],
+    "assets": {
+      "imgBig": {
+        "url": "img/lgDMC.png",
+        "copyrightUrl": "https://www.devilmaycry.com/5se/"
+      },
+      "imgSmall": {
+        "url": "img/smDMC.png",
+        "copyright": "https://www.devilmaycry.com/5se/"
+      }
+    }
   }
 ]
