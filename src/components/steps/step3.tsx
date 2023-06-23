@@ -93,6 +93,7 @@ export const Step3 = component$(
         <ul class="capcom-platforms flex flex-wrap gap-5 max-w-[350px] opacity-0">
           {PLATFORMS.map((platform) => (
             <li
+              key={platform}
               class={{
                 '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
                   ctx.platform === platform,

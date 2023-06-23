@@ -88,6 +88,7 @@ export const Step2 = component$(
         <ul class="capcom-genres flex flex-wrap gap-5 max-w-[350px] opacity-0">
           {GENRES.map((genre) => (
             <li
+              key={genre}
               class={{
                 '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
                   ctx.genre === genre,

@@ -1,7 +1,7 @@
 import { type PropFunction, component$ } from '@builder.io/qwik'
 
 type BackButtonProps = {
-  onClick: PropFunction<() => void> | (() => void)
+  onClick: PropFunction<() => void>
 }
 
 export const BackButton = component$(({ onClick }: BackButtonProps) => {
