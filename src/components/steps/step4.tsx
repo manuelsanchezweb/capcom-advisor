@@ -20,7 +20,7 @@ export const Step4 = component$(
         '.capcom-options'
       ) as NodeListOf<HTMLElement>
       const buttons = document.querySelector('.capcom-buttons')
-      const back = document.querySelector('.btn--back') as HTMLElement
+      const navigation = document.querySelector('.capcom-nav') as HTMLElement
       if (!title || !buttons || !options) return
 
       const sequence: TimelineDefinition = [
@@ -32,7 +32,7 @@ export const Step4 = component$(
           { duration: 0.3, delay: stagger(0.2) },
         ],
         [buttons, { opacity: [0, 1], y: [-50, 0] }, { at: 1 }],
-        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.2 }],
+        [navigation, { opacity: [0, 1], y: [-50, 0] }, { at: 1.2 }],
       ]
 
       timeline(sequence, {})
@@ -49,7 +49,7 @@ export const Step4 = component$(
               {games.map((game) => (
                 <li
                   key={game.id}
-                  class=" flex flex-col md:flex-row gap-4 md:gap-10 my-8"
+                  class=" flex flex-col-reverse md:flex-row gap-4 md:gap-10 my-8"
                 >
                   <figure>
                     <img
@@ -66,8 +66,9 @@ export const Step4 = component$(
                         rel="nofollow noopener"
                         href={game.assets.imgSmall.copyrightUrl}
                       >
-                        {game.assets.imgSmall.copyrightUrl}
+                        official page
                       </a>
+                      .
                     </figcaption>
                   </figure>
                   <div class="flex flex-col gap-4 md:items-start md:text-left">

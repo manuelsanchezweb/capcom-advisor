@@ -19,7 +19,7 @@ export const useGames = routeLoader$(async () => {
 
 export default component$(() => {
   const ctx = useGlobalState()
-  const step = useSignal(1)
+  const step = useSignal(4)
   const { value: games } = useGames()
 
   useVisibleTask$(({ track }) => {
@@ -68,7 +68,7 @@ export default component$(() => {
       <div class="w-full relative min-h-screen">
         <Navigation />
         <Debug />
-        <div class="flex flex-col min-h-[90vh] items-center justify-center gap-6 text-center max-w-[750px] mx-auto">
+        <div class="flex flex-col min-h-[90vh] items-center justify-center gap-6 text-center max-w-[750px] mx-auto my-12">
           <SVGManager
             svg="capcom"
             classCustom="capcom-logo w-[230px] md:w-[330px] h-auto opacity-0"

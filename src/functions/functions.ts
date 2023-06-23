@@ -5,10 +5,13 @@ export function getGamesForUser(
   selectedGenre: string,
   selectedPlatform: string
 ): Game[] {
+  if (!allGamesInfo) return []
+  console.log('allGamesInfo', allGamesInfo)
+
   const gamesForGenre = allGamesInfo.filter((game) =>
     game.genres.includes(selectedGenre)
   )
-  // console.log(allGamesInfo, selectedGenre, selectedPlatform)
+  console.log(allGamesInfo, selectedGenre, selectedPlatform)
   // console.log('gamesForGenre', gamesForGenre)
 
   const gamesForPlatform = gamesForGenre.filter((game) =>
