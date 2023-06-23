@@ -47,7 +47,7 @@ export const Step4 = component$(
 
     return (
       <>
-        <BackButton onClick={$(() => nav('/'))} text="Start" hasIcon={false} />
+        <BackButton onClick={$(() => nav('/'))} text="Home" hasIcon={false} />
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
           This is what you are looking for:
         </h2>

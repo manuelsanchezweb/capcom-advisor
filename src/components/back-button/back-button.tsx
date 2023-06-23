@@ -10,7 +10,7 @@ export const BackButton = component$(
   ({ onClick, hasIcon = true, text }: BackButtonProps) => {
     return (
       <button
-        class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
+        class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-14 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
         onClick$={onClick}
       >
         {hasIcon && (

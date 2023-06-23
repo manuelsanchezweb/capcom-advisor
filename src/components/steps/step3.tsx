@@ -95,11 +95,14 @@ export const Step3 = component$(
                 'outline outline-5 outline-capcomBlue cursor-not-allowed opacity-1':
                   ctx.platform === platform.slug,
                 'cursor-pointer opacity-40': ctx.platform !== platform.slug,
-                'px-6 py-3 text-capcomWhite': true,
+                'px-6 py-3 text-capcomWhite max-w-[125px] md:max-w-none': true,
               }}
               onClick$={() => (ctx.platform = platform.slug)}
             >
-              {renderConsoleIcon(platform.slug)}
+              <SVGManager
+                classCustom="max-w-[75px] md:max-w-none coolIcon"
+                svg={platform.slug}
+              />
             </li>
           ))}
         </ul>

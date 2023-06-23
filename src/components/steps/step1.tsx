@@ -77,7 +77,7 @@ export const Step1 = component$(
         <div class="capcom-name flex gap-4 flex-col items-start opacity-0">
           <label for="name">Your name:</label>
           <input
-            class="border border-black rounded-sm py-3 px-6"
+            class="border border-black rounded-sm py-3 px-4"
             placeholder="Max Mustermann"
             type="text"
             name="name"
@@ -87,14 +87,14 @@ export const Step1 = component$(
             }}
             value={ctx.name}
           />
+          <button
+            disabled={!ctx.name}
+            class="btn btn--border btn--next disabled:opacity-50 disabled:cursor-not-allowed opacity-0 flex justify-center mx-auto"
+            onClick$={() => onNextStep()}
+          >
+            Next step
+          </button>
         </div>
-        <button
-          disabled={!ctx.name}
-          class="btn btn--border btn--next disabled:opacity-50 disabled:cursor-not-allowed opacity-0"
-          onClick$={() => onNextStep()}
-        >
-          Next step
-        </button>
       </>
     )
   }

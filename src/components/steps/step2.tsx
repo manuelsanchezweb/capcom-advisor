@@ -79,7 +79,7 @@ export const Step2 = component$(
         <p class="text-md md:text-lg opacity-0">
           But again, where were we... and yeah, your favorite genre?
         </p>
-        <ul class="capcom-genres flex flex-wrap justify-start gap-5 max-w-[550px] opacity-0 border border-capcomBlack p-7">
+        <ul class="capcom-genres flex flex-wrap justify-center md:justify-start gap-5 max-w-[550px] opacity-0 border border-capcomBlack p-7">
           {GENRES.map((genre) => (
             <li
               key={genre.id}

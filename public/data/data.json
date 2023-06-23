@@ -175,41 +175,41 @@
     "name": "Megaman Zero/ZX Legacy Collection",
     "description": "Megaman's last game is here! This time brings together six classic titles in one game: Megaman Zero 1, 2, 3, 4, Megaman ZX and ZX Advent. In addition to the original games, this package includes an artwork gallery, music player, special filters, and much more. Megaman Zero/ZX Legacy Collection is a 2D action game released in 2020.",
     "genres": ["action", "adventure"],
-    "urlOfficial": "https://www.megaman.com/zerozx/en-uk/",
+    "urlOfficial": "https://www.megaman-zzxlc.com/us/",
     "platforms": [
       {
         "name": "ps5",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       },
       {
         "name": "ps4",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       },
       {
         "name": "xbox-series",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       },
       {
         "name": "xbox-one",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       },
       {
         "name": "steam",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       },
       {
         "name": "switch",
-        "url": "https://www.megaman.com/zerozx/en-uk/"
+        "url": "https://www.megaman-zzxlc.com/us/"
       }
     ],
     "assets": {
       "imgBig": {
         "url": "img/lgMegaman.png",
-        "copyrightUrl": "https://www.megaman.com/zerozx/en-uk/"
+        "copyrightUrl": "https://www.megaman-zzxlc.com/us/"
       },
       "imgSmall": {
         "url": "img/smMegaman.png",
-        "copyrightUrl": "https://www.megaman.com/zerozx/en-uk/"
+        "copyrightUrl": "https://www.megaman-zzxlc.com/us/"
       }
     }
   }
