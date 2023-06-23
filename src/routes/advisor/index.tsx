@@ -4,15 +4,26 @@ import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
 import { Navigation } from '~/components/navigation/navigation'
+import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import { getGames } from '~/api/getGames'
+
+export const useGames = routeLoader$(async () => {
+  try {
+    return await getGames()
+  } catch (error) {
+    console.error('An error occurred while fetching games!', error)
+    return []
+  }
+})
 
 export default component$(() => {
   const ctx = useGlobalState()
   // const { genre } = ctx
   const step = useSignal(1)
+  const { value: games } = useGames()
+  console.log(games)
 
   const handleNextStep = $(() => {
-    console.log('step', step.value)
-
     if (step.value === 1) {
       // Additional logic for Step 1 completion
       step.value = 2 // Move to Step 2
@@ -23,10 +34,6 @@ export default component$(() => {
     } else if (step.value === 3) {
       // Additional logic for Step 3 completion
       step.value = 4 // Move back to Step 1
-    } else if (step.value === 4) {
-      // Additional logic for Step 4 completion
-      step.value = 1 // Move back to Step 1
-      // TODO: clean the context here
     }
   })
 
@@ -91,3 +98,57 @@ export default component$(() => {
     </div>
   )
 })
+
+export const head: DocumentHead = {
+  title: 'Unofficial Capcom Advisor',
+  meta: [
+    {
+      name: 'description',
+      content: 'Find out which game is for you with this cool advisor!',
+    },
+    {
+      name: 'keywords',
+      content: 'capcom, game, steam, re4, monster hunter, Qwik',
+    },
+    {
+      name: 'author',
+      content: 'Manuel Sanchez',
+    },
+    {
+      property: 'og:title',
+      content: 'Unofficial Capcom Advisor',
+    },
+    {
+      property: 'og:description',
+      content: 'Find out which game is for you with this cool advisor!',
+    },
+    {
+      property: 'og:image',
+      content: 'https://capcom.vercel.app/thumbnail.png',
+    },
+    {
+      property: 'og:url',
+      content: 'https://capcom.vercel.app/',
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:site',
+      content: '@manuelsandoble',
+    },
+    {
+      name: 'twitter:title',
+      content: 'Unofficial Capcom Advisor',
+    },
+    {
+      name: 'twitter:description',
+      content: 'Find out which game is for you with this cool advisor!',
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://capcom.vercel.app/thumbnail.png',
+    },
+  ],
+}
