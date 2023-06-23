@@ -2,22 +2,21 @@ import {
   type PropFunction,
   component$,
   useVisibleTask$,
+  $,
 } from '@builder.io/qwik'
 import { timeline, stagger, type TimelineDefinition } from 'motion'
 // import { getGames } from '~/api/getGames'
 import { URL } from '~/constants/constants'
 import { useGlobalState } from '~/ctx/ctx'
+import { BackButton } from '../back-button/back-button'
+import { useNavigate } from '@builder.io/qwik-city'
 // import { Game } from '~/types/types'
 
 export const Step4 = component$(
   ({ onEndApp }: { onEndApp: PropFunction<() => void> }) => {
     const ctx = useGlobalState()
+    const nav = useNavigate()
     const { games } = ctx
-    console.log('games', games)
-
-    // const allGames = useResource$<Game[]>(async () => {
-    //   return getGames()
-    // })
 
     useVisibleTask$(() => {
       const logo = document.querySelector('.capcom-logo') as HTMLElement
@@ -27,6 +26,7 @@ export const Step4 = component$(
       ) as NodeListOf<HTMLElement>
       const buttons = document.querySelector('.capcom-buttons')
       const navigation = document.querySelector('.capcom-nav') as HTMLElement
+      const back = document.querySelector('.btn--back') as HTMLButtonElement
       if (!title || !buttons || !options) return
 
       const sequence: TimelineDefinition = [
@@ -39,6 +39,7 @@ export const Step4 = component$(
         ],
         [buttons, { opacity: [0, 1], y: [-50, 0] }, { at: 1 }],
         [navigation, { opacity: [0, 1], y: [-50, 0] }, { at: 1.2 }],
+        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.4 }],
       ]
 
       timeline(sequence, {})
@@ -46,19 +47,13 @@ export const Step4 = component$(
 
     return (
       <>
+        <BackButton onClick={$(() => nav('/'))} text="Start" hasIcon={false} />
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
           This is what you are looking for:
         </h2>
         <div class="capcom-options opacity-0">
           {games.length > 0 ? (
             <ul class="w-full">
-              {/* <Resource
-                value={allGames}
-                onResolved={(weather) => {
-                  console.log('This is the waether', weather)
-                  return <div>Temperature: hola</div>
-                }}
-              /> */}
               {games.map((game) => (
                 <li
                   key={game.id}
@@ -86,7 +81,7 @@ export const Step4 = component$(
                   </figure>
                   <div class="flex flex-col gap-4 md:items-start md:text-left">
                     <h3 class="text-2xl font-bold">{game.name}</h3>
-                    <p class="text-lg">{game.description}</p>
+                    <p class="text-lg line-clamp-4">{game.description}</p>
                     <a
                       class="btn btn--border"
                       target="_blank"

@@ -27,7 +27,7 @@ export default component$(() => {
     <div class="flex flex-col min-h-screen w-full max-w-[1440px] px-5 mx-auto md:px-16 lg:px-[120px]">
       <Navigation />
 
-      <main class="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-[70vh] gap-4 relative mb-8">
+      <main class="flex flex-col min-h-[70vh] lg:flex-row items-center justify-center lg:justify-between gap-4 relative my-8">
         <div class="capcom-text opacity-0 flex flex-col items-center text-center lg:items-start lg:text-left my-12 gap-8 max-w-[550px]">
           <SVGManager
             svg="capcom"

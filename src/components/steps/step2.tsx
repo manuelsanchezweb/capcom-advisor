@@ -49,7 +49,7 @@ export const Step2 = component$(
         <BackButton onClick={$(() => handlePreviousStep())} />
 
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
-          What is your favourite genre?
+          What is your favourite genre, {ctx.name}?
         </h2>
         <p class="text-md md:text-lg opacity-0">
           When I was a child, my sister used to challenge me to Street Fighter 3
@@ -77,7 +77,7 @@ export const Step2 = component$(
         <p class="text-md md:text-lg opacity-0">
           But again, where were we... and yeah, your favorite genre?
         </p>
-        <ul class="capcom-genres flex flex-wrap justify-start gap-5 max-w-[450px] opacity-0">
+        <ul class="capcom-genres flex flex-wrap justify-start gap-5 max-w-[550px] opacity-0 border border-capcomBlack p-7">
           {GENRES.map((genre) => (
             <li
               key={genre.id}

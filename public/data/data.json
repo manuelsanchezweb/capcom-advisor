@@ -45,7 +45,7 @@
   {
     "id": 2,
     "name": "Resident Evil 4 Remake",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Montes nascetur ridiculus mus mauris.",
+    "description": "Resident Evil 4 is a remake of the 2005 original Resident Evil 4. Reimagined for 2023 to bring state-of-the-art survival horror. Resident Evil 4 preserves the essence of the original game, while introducing modernized gameplay, a reimagined storyline, and vividly detailed graphics to make this the latest survival horror game where life and death, terror and catharsis intersect.",
     "genres": ["action", "shooting", "adventure", "horror"],
     "urlOfficial": "https://www.residentevil.com/re4/en-uk/",
     "platforms": [
@@ -93,6 +93,123 @@
       "imgSmall": {
         "url": "img/smDMC.png",
         "copyright": "https://www.devilmaycry.com/5se/"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Street Fighter VI",
+    "description": "Fighting games are back. Street Fighter VI is the latest entry in the Street Fighter series. The game features a new fighting system, new characters, and new stages. Street Fighter VI is a 2D fighting game released in 2022.",
+    "genres": ["fighting"],
+    "urlOfficial": "https://www.streetfighter.com/6/en-uk",
+    "platforms": [
+      {
+        "name": "ps5",
+        "url": "https://www.streetfighter.com/6/en-uk"
+      },
+      {
+        "name": "ps4",
+        "url": "https://www.streetfighter.com/6/en-uk"
+      },
+      {
+        "name": "xbox-series",
+        "url": "https://www.streetfighter.com/6/en-uk"
+      },
+      {
+        "name": "steam",
+        "url": "https://www.streetfighter.com/6/en-uk"
+      }
+    ],
+    "assets": {
+      "imgBig": {
+        "url": "img/lgSF6.png",
+        "copyrightUrl": "https://www.streetfighter.com/6/en-uk"
+      },
+      "imgSmall": {
+        "url": "img/smSF6.png",
+        "copyrightUrl": "https://www.streetfighter.com/6/en-uk"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Exoprimal",
+    "description": "Exoprimal is a game about a group of people who are stranded on a planet. They must survive by hunting and gathering food, building shelter, and defending themselves from predators. The game is set in a procedurally generated world with different biomes and weather conditions. The player can explore the world, gather resources, and craft items to survive. It will be published on the 14th July 2023.",
+    "genres": ["action", "adventure", "survival"],
+    "urlOfficial": "https://www.exoprimal.com/",
+    "platforms": [
+      {
+        "name": "ps5",
+        "url": "https://www.exoprimal.com/"
+      },
+      {
+        "name": "ps4",
+        "url": "https://www.exoprimal.com/"
+      },
+      {
+        "name": "steam",
+        "url": "https://www.exoprimal.com/"
+      },
+      {
+        "name": "xbox-series",
+        "url": "https://www.exoprimal.com/"
+      },
+      {
+        "name": "xbox-one",
+        "url": "https://www.exoprimal.com/"
+      }
+    ],
+    "assets": {
+      "imgBig": {
+        "url": "img/lgExoprimal.png",
+        "copyrightUrl": "https://www.exoprimal.com/"
+      },
+      "imgSmall": {
+        "url": "img/smExoprimal.png",
+        "copyrightUrl": "https://www.exoprimal.com/"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "name": "Megaman Zero/ZX Legacy Collection",
+    "description": "Megaman's last game is here! This time brings together six classic titles in one game: Megaman Zero 1, 2, 3, 4, Megaman ZX and ZX Advent. In addition to the original games, this package includes an artwork gallery, music player, special filters, and much more. Megaman Zero/ZX Legacy Collection is a 2D action game released in 2020.",
+    "genres": ["action", "adventure"],
+    "urlOfficial": "https://www.megaman.com/zerozx/en-uk/",
+    "platforms": [
+      {
+        "name": "ps5",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      {
+        "name": "ps4",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      {
+        "name": "xbox-series",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      {
+        "name": "xbox-one",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      {
+        "name": "steam",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      {
+        "name": "switch",
+        "url": "https://www.megaman.com/zerozx/en-uk/"
+      }
+    ],
+    "assets": {
+      "imgBig": {
+        "url": "img/lgMegaman.png",
+        "copyrightUrl": "https://www.megaman.com/zerozx/en-uk/"
+      },
+      "imgSmall": {
+        "url": "img/smMegaman.png",
+        "copyrightUrl": "https://www.megaman.com/zerozx/en-uk/"
       }
     }
   }

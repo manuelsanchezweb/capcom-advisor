@@ -57,8 +57,8 @@ export const Step3 = component$(
         </p>
         <p class="text-md md:text-lg opacity-0">
           Since 2021 I decided to work part-time in my current job as a Frontend
-          Team Lead and take the rest of the time to create side projects, like
-          creating content for those interested in web development in Spanish on{' '}
+          Team Lead to be able to have some time to create side projects, like
+          creating content in Spanish on{' '}
           <a
             target="_blank"
             title="YouTube Channel"
@@ -81,7 +81,8 @@ export const Step3 = component$(
           doing kickboxing and for doing non-productive stuff.
         </p>
         <p class="text-md md:text-lg opacity-0">
-          You know now how I spend my time, but... how do you usually chill?
+          You know now how I spend my time, but... how do you usually chill,{' '}
+          {ctx.name}?
         </p>
         <ul class="capcom-platforms flex flex-wrap justify-center gap-5 max-w-[650px] opacity-0">
           {PLATFORMS.map((platform) => (

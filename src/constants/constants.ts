@@ -70,21 +70,6 @@ export const GENRES: Genre[] = [
   },
   {
     id: 4,
-    name: 'Strategy',
-    slug: 'strategy',
-  },
-  {
-    id: 5,
-    name: 'Simulation',
-    slug: 'simulation',
-  },
-  {
-    id: 6,
-    name: 'Sports',
-    slug: 'sports',
-  },
-  {
-    id: 7,
     name: 'Horror',
     slug: 'horror',
   },
