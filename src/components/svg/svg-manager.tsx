@@ -1,8 +1,26 @@
 import { type JSXNode, component$ } from '@builder.io/qwik'
 import { LogoCapcom } from './logos/logos'
 import { IconGitHub, IconLinkedIn, IconYouTube } from './icons/icons'
+import {
+  PlatformPS4,
+  PlatformPS5,
+  PlatformSteam,
+  PlatformSwitch,
+  PlatformXboxOne,
+  PlatformXboxSeries,
+} from './platforms/platforms'
 
-type SVGType = 'capcom' | 'github' | 'linkedin' | 'youtube'
+export type SVGType =
+  | 'capcom'
+  | 'github'
+  | 'linkedin'
+  | 'youtube'
+  | 'ps4'
+  | 'ps5'
+  | 'switch'
+  | 'xbox-series'
+  | 'xbox-one'
+  | 'steam'
 
 export const SVGManager = component$<{ svg: SVGType; classCustom?: string }>(
   (props): JSXNode => {
@@ -17,6 +35,19 @@ export const SVGManager = component$<{ svg: SVGType; classCustom?: string }>(
         return <IconLinkedIn classCustom={classCustom} />
       case 'youtube':
         return <IconYouTube classCustom={classCustom} />
+
+      case 'ps4':
+        return <PlatformPS4 classCustom={classCustom} />
+      case 'ps5':
+        return <PlatformPS5 classCustom={classCustom} />
+      case 'switch':
+        return <PlatformSwitch classCustom={classCustom} />
+      case 'steam':
+        return <PlatformSteam classCustom={classCustom} />
+      case 'xbox-one':
+        return <PlatformXboxOne classCustom={classCustom} />
+      case 'xbox-series':
+        return <PlatformXboxSeries classCustom={classCustom} />
 
       default:
         // It should never get here if you are using TypeScript correctly.

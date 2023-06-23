@@ -6,7 +6,7 @@ const gamesData = [
     name: 'Resident Evil 4 Remake',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Montes nascetur ridiculus mus mauris.',
-    categories: ['action, shooting, adventure'],
+    genres: ['action', 'shooting', 'adventure'],
     urlOfficial: 'https://www.google.com',
     platforms: [
       {
@@ -24,8 +24,8 @@ const gamesData = [
         copyrightUrl: '',
       },
       imgSmall: {
-        url: '',
-        copyrightUrl: '',
+        url: './img/smRE4.png',
+        copyrightUrl: 'https://www.residentevil.com/re4/en-uk/',
       },
     },
   },

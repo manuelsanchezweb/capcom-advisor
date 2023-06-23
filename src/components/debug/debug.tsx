@@ -3,7 +3,7 @@ import { useGlobalState } from '~/ctx/ctx'
 
 export const Debug = component$(() => {
   const ctx = useGlobalState()
-  const { name, genre, platform, game } = ctx
+  const { name, genre, platform, games } = ctx
 
   const isDebugOpened = useSignal(true)
 
@@ -23,7 +23,7 @@ export const Debug = component$(() => {
             <li>This is the name: {name}</li>
             <li>This is the genre: {genre}</li>
             <li>This is the platform: {platform}</li>
-            <li>This is the game: {game}</li>
+            <li>This is the game: {games[0]?.name}</li>
           </ul>
         </div>
       ) : (

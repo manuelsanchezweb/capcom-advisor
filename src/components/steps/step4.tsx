@@ -3,38 +3,40 @@ import {
   component$,
   useVisibleTask$,
   $,
+  Signal,
 } from '@builder.io/qwik'
-import { timeline, stagger } from 'motion'
-import { BackButton } from '../back-button/back-button'
+import { timeline, stagger, TimelineDefinition } from 'motion'
+import { useGlobalState } from '~/ctx/ctx'
+
+let URL = import.meta.env.PUBLIC_APP_URL
 
 export const Step4 = component$(
-  ({
-    onEndApp,
-    handlePreviousStep,
-  }: {
-    onEndApp: PropFunction<() => void>
-    handlePreviousStep: PropFunction<() => void>
-  }) => {
-    useVisibleTask$(() => {
-      const logo = document.querySelector('.capcom-logo')
-      const title = document.querySelector('h2')
-      const paragraphs = document.querySelectorAll('p')
-      const platforms = document.querySelectorAll('.capcom-platforms')
-      const buttons = document.querySelector('.capcom-options')
-      const back = document.querySelector('.btn--back')
-      if (!title || !paragraphs || !buttons) return
+  ({ onEndApp }: { onEndApp: PropFunction<() => void> }) => {
+    const ctx = useGlobalState()
+    const { games } = ctx
+    console.log('games', games)
 
-      const sequence: any = [
+    useVisibleTask$(({ cleanup }) => {
+      console.log('Here')
+      const logo = document.querySelector('.capcom-logo') as HTMLElement
+      const title = document.querySelector('h2')
+      const options = document.querySelectorAll(
+        '.capcom-options'
+      ) as NodeListOf<HTMLElement>
+      const buttons = document.querySelector('.capcom-buttons')
+      const back = document.querySelector('.btn--back') as HTMLElement
+      if (!title || !buttons || !options) return
+
+      const sequence: TimelineDefinition = [
         [logo, { opacity: [0, 1], y: [-50, 0] }, { at: 0.1 }],
         [title, { opacity: [0, 1], y: [-50, 0] }, { at: 0.3 }],
         [
-          paragraphs,
+          options,
           { opacity: [0, 1], y: [-50, 0] },
           { duration: 0.3, delay: stagger(0.2) },
         ],
-        [platforms, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
-        [buttons, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
-        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
+        [buttons, { opacity: [0, 1], y: [-50, 0] }, { at: 1 }],
+        [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.2 }],
       ]
 
       timeline(sequence, {})
@@ -42,14 +44,59 @@ export const Step4 = component$(
 
     return (
       <>
-        <BackButton onClick={$(() => handlePreviousStep())} />
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
           This is what you are looking for:
         </h2>
-        <p class="text-md md:text-xl opacity-0">
-          Resident Evil 4 Remake is coming in 2022, and I’m so excited about...
-        </p>
-        <div class="capcom-options flex flex-col md:flex-row gap-6 justify-between items-center">
+        <div class="capcom-options opacity-0">
+          {games.length > 0 ? (
+            <ul class="w-full">
+              {games.map((game) => (
+                <li
+                  key={game.id}
+                  class=" flex flex-col md:flex-row gap-4 md:gap-10 my-8"
+                >
+                  <figure>
+                    <img
+                      src={`${URL}${game.assets.imgSmall.url}`}
+                      alt={game.name}
+                      class="md:min-w-[350px]"
+                      height={300}
+                      width={500}
+                    />
+                    <figcaption class="text-left text-xs my-1">
+                      Image from{' '}
+                      <a
+                        target="_blank"
+                        rel="nofollow noopener"
+                        href={game.assets.imgSmall.copyrightUrl}
+                      >
+                        {game.assets.imgSmall.copyrightUrl}
+                      </a>
+                    </figcaption>
+                  </figure>
+                  <div class="flex flex-col gap-4 md:items-start md:text-left">
+                    <h3 class="text-2xl font-bold">{game.name}</h3>
+                    <p class="text-lg">{game.description}</p>
+                    <a
+                      class="btn btn--border"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      title={`See official page of ${game.name}`}
+                      href={game.urlOfficial}
+                    >
+                      Visit official page
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>
+              We do not have a game for your search criteria, try sth else!{' '}
+            </p>
+          )}
+        </div>
+        <div class="capcom-buttons flex flex-col md:flex-row gap-6 justify-between items-center">
           <button class="btn btn--border btn--next" onClick$={() => onEndApp()}>
             Launch the advisor again
           </button>

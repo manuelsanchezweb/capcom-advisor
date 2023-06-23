@@ -1,11 +1,16 @@
-import { $, component$, useSignal } from '@builder.io/qwik'
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
 import { Navigation } from '~/components/navigation/navigation'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import {
+  routeLoader$,
+  type DocumentHead,
+  useNavigate,
+} from '@builder.io/qwik-city'
 import { getGames } from '~/api/getGames'
+import { getGamesForUser } from '~/functions/functions'
 
 export const useGames = routeLoader$(async () => {
   try {
@@ -18,10 +23,13 @@ export const useGames = routeLoader$(async () => {
 
 export default component$(() => {
   const ctx = useGlobalState()
-  // const { genre } = ctx
   const step = useSignal(1)
   const { value: games } = useGames()
-  console.log(games)
+
+  useVisibleTask$(({ track }) => {
+    track(step)
+    ctx.games = getGamesForUser(games, ctx.genre, ctx.platform)
+  })
 
   const handleNextStep = $(() => {
     if (step.value === 1) {
@@ -58,9 +66,9 @@ export default component$(() => {
     // Reset your context here by updating the necessary state values
     // For example, you can set `genre` to an empty string or null
     ctx.name = ''
-    ctx.genre = 'Action'
-    ctx.platform = 'PC'
-    ctx.game = 'Resident Evil 4 Remake'
+    ctx.genre = 'action'
+    ctx.platform = 'steam'
+    ctx.games = []
   })
 
   return (
@@ -68,7 +76,7 @@ export default component$(() => {
       <div class="w-full relative min-h-screen">
         <Navigation />
         <Debug />
-        <div class="flex flex-col min-h-[90vh] items-center justify-center gap-6 text-center max-w-[650px] mx-auto">
+        <div class="flex flex-col min-h-[90vh] items-center justify-center gap-6 text-center max-w-[750px] mx-auto">
           <SVGManager
             svg="capcom"
             classCustom="capcom-logo w-[230px] md:w-[330px] h-auto opacity-0"
@@ -87,12 +95,7 @@ export default component$(() => {
               onNextStep={handleNextStep}
             />
           )}
-          {step.value === 4 && (
-            <Step4
-              handlePreviousStep={handlePreviousStep}
-              onEndApp={handleEndApp}
-            />
-          )}
+          {step.value === 4 && <Step4 onEndApp={handleEndApp} />}
         </div>
       </div>
     </div>

@@ -7,15 +7,7 @@ import {
 import { timeline, stagger } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
 import { BackButton } from '../back-button/back-button'
-
-const GENRES = [
-  'Action',
-  'Adventure',
-  'RPG',
-  'Strategy',
-  'Simulation',
-  'Sports',
-]
+import { GENRES } from '~/constants/constants'
 
 export const Step2 = component$(
   ({
@@ -85,20 +77,20 @@ export const Step2 = component$(
         <p class="text-md md:text-lg opacity-0">
           But again, where were we... and yeah, your favorite genre?
         </p>
-        <ul class="capcom-genres flex flex-wrap gap-5 max-w-[350px] opacity-0">
+        <ul class="capcom-genres flex flex-wrap justify-start gap-5 max-w-[450px] opacity-0">
           {GENRES.map((genre) => (
             <li
-              key={genre}
+              key={genre.id}
               class={{
                 '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
-                  ctx.genre === genre,
-                'cursor-pointer': ctx.genre !== genre,
+                  ctx.genre === genre.slug,
+                'cursor-pointer': ctx.genre !== genre.slug,
                 'px-6 py-3 border border-capcomBlue bg-capcomYellow hover:text-capcomWhite hover:bg-capcomBlue':
                   true,
               }}
-              onClick$={() => (ctx.genre = genre)}
+              onClick$={() => (ctx.genre = genre.slug)}
             >
-              {genre}
+              {genre.name}
             </li>
           ))}
         </ul>

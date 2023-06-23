@@ -7,15 +7,8 @@ import {
 import { timeline, stagger } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
 import { BackButton } from '../back-button/back-button'
-
-const PLATFORMS = [
-  'PC',
-  'PS4',
-  'PS5',
-  'Xbox One',
-  'Xbox Series X',
-  'Nintendo Switch',
-]
+import { PLATFORMS } from '~/constants/constants'
+import { SVGManager } from '../svg/svg-manager'
 
 export const Step3 = component$(
   ({
@@ -90,20 +83,20 @@ export const Step3 = component$(
         <p class="text-md md:text-lg opacity-0">
           You know now how I spend my time, but... how do you usually chill?
         </p>
-        <ul class="capcom-platforms flex flex-wrap gap-5 max-w-[350px] opacity-0">
+        <ul class="capcom-platforms flex flex-wrap justify-center gap-5 max-w-[650px] opacity-0">
           {PLATFORMS.map((platform) => (
             <li
-              key={platform}
+              key={platform.slug}
+              style={{ backgroundColor: platform.color }}
               class={{
-                '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
-                  ctx.platform === platform,
-                'cursor-pointer': ctx.platform !== platform,
-                'px-6 py-3 border border-capcomBlue bg-capcomYellow hover:text-capcomWhite hover:bg-capcomBlue':
-                  true,
+                'outline outline-5 outline-capcomBlue cursor-not-allowed opacity-1':
+                  ctx.platform === platform.slug,
+                'cursor-pointer opacity-40': ctx.platform !== platform.slug,
+                'px-6 py-3 text-capcomWhite': true,
               }}
-              onClick$={() => (ctx.platform = platform)}
+              onClick$={() => (ctx.platform = platform.slug)}
             >
-              {platform}
+              {renderConsoleIcon(platform.slug)}
             </li>
           ))}
         </ul>
@@ -114,3 +107,22 @@ export const Step3 = component$(
     )
   }
 )
+
+function renderConsoleIcon(platform: string) {
+  switch (platform) {
+    case 'switch':
+      return <SVGManager svg="switch" />
+    case 'xbox-one':
+      return <SVGManager svg="xbox-one" />
+    case 'xbox-series':
+      return <SVGManager svg="xbox-series" />
+    case 'ps5':
+      return <SVGManager svg="ps5" />
+    case 'ps4':
+      return <SVGManager svg="ps4" />
+    case 'steam':
+      return <SVGManager svg="steam" />
+    default:
+      return null
+  }
+}
