@@ -64,83 +64,113 @@ export default component$(() => {
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://www.monsterhunter.com/rise-sunbreak/platform.html"
                 title='Check "Monster Hunter Rise" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgMonsterHunter.png" alt="MonsterHunter" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgMonsterHunter.png"
+                  alt="MonsterHunter"
+                />
               </a>
             </li>
             {/* // DMC  */}
             <li class="splide__slide h-full w-full">
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://www.devilmaycry.com/5/"
                 title='Check "Devil May Cry 5 Special Edition" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgDMC.png" alt="DMC" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgDMC.png"
+                  alt="DMC"
+                />
               </a>
             </li>
             {/* // RE4  */}
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://www.residentevil.com/re4/en-uk/"
                 title='Check "Resident Evil 4" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgRE4.png" alt="RE4" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgRE4.png"
+                  alt="RE4"
+                />
               </a>
             </li>
             {/* // SF6 */}
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://www.streetfighter.com/6/en-uk"
                 title='Check "Street Fighter 6" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgSF6.png" alt="SF6" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgSF6.png"
+                  alt="SF6"
+                />
               </a>
             </li>
             {/* // Exoprimal  */}
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://www.exoprimal.com/en-uk/"
                 title='Check "Exoprimal" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgExoprimal.png" alt="Exoprimal" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgExoprimal.png"
+                  alt="Exoprimal"
+                />
               </a>
             </li>
             {/* // Megaman  */}
             <li class="splide__slide h-full w-full">
               {' '}
               <a
-                class="cursor-pointer group w-full h-full flex filter grayscale hover:grayscale-0 transition-all duration-300"
+                class="cursor-pointer group w-full h-full flex transition-all duration-300"
                 href="https://megaman.capcom.com/"
                 title='Check "Megaman Zero/ZX" Game Page'
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="overlay absolute top-0 left-0 w-full h-full bg-black/50 group-hover:bg-transparent z-10"></div>
-                <img src="../img/lgMegaman.png" alt="Megaman" />
+                <img
+                  height={375}
+                  width={820}
+                  src="../img/lgMegaman.png"
+                  alt="Megaman"
+                />
               </a>
             </li>
           </ul>

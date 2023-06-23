@@ -3,6 +3,7 @@ import { SVGManager } from '~/components/svg/svg-manager'
 import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
+import { Navigation } from '~/components/navigation/navigation'
 
 export default component$(() => {
   const ctx = useGlobalState()
@@ -50,27 +51,23 @@ export default component$(() => {
     // Reset your context here by updating the necessary state values
     // For example, you can set `genre` to an empty string or null
     ctx.name = ''
-    ctx.genre = ''
-    ctx.platform = ''
-    ctx.game = ''
+    ctx.genre = 'Action'
+    ctx.platform = 'PC'
+    ctx.game = 'Resident Evil 4 Remake'
   })
 
   return (
     <div class="flex flex-col items-center min-h-screen w-full max-w-[1440px] px-5 mx-auto md:px-16 lg:px-[120px]">
       <div class="w-full relative min-h-screen">
+        <Navigation />
         <Debug />
-        <div class="flex flex-col min-h-screen items-center justify-center gap-8 text-center max-w-[650px] mx-auto">
+        <div class="flex flex-col min-h-[90vh] items-center justify-center gap-6 text-center max-w-[650px] mx-auto">
           <SVGManager
             svg="capcom"
             classCustom="capcom-logo w-[230px] md:w-[330px] h-auto opacity-0"
           />
 
-          {step.value === 1 && (
-            <Step1
-              handlePreviousStep={handlePreviousStep}
-              onNextStep={handleNextStep}
-            />
-          )}
+          {step.value === 1 && <Step1 onNextStep={handleNextStep} />}
           {step.value === 2 && (
             <Step2
               handlePreviousStep={handlePreviousStep}

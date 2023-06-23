@@ -2,6 +2,8 @@ import { component$, useVisibleTask$ } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { timeline } from 'motion'
+import { CD } from '~/components/cd/cd'
+import { Navigation } from '~/components/navigation/navigation'
 
 export default component$(() => {
   useVisibleTask$(() => {
@@ -23,38 +25,7 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col min-h-screen w-full max-w-[1440px] px-5 mx-auto md:px-16 lg:px-[120px]">
-      <nav class="capcom-nav opacity-0 w-full flex justify-end gap-4 mt-12">
-        {/* // LinkedIn  */}
-        <a
-          class="btn--icon"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Check LinkedIn Profile"
-          href="https://www.linkedin.com/in/manusanchez2/"
-        >
-          <SVGManager svg="linkedin" classCustom="text-capcomBlue h-6 w-6" />
-        </a>
-        {/* // YouTube  */}
-        <a
-          class="btn--icon"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Check YouTube Channel"
-          href="https://www.youtube.com/channel/UCX3IE_OjG20p_AwbX06YAEg"
-        >
-          <SVGManager svg="youtube" classCustom="text-capcomBlue h-6 w-6" />
-        </a>
-        {/* // GitHub  */}
-        <a
-          class="btn--icon"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Check GitHub Repo"
-          href="https://github.com/manuelsanchezweb"
-        >
-          <SVGManager svg="github" classCustom="text-capcomBlue h-6 w-6" />
-        </a>
-      </nav>
+      <Navigation />
 
       <main class="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-[70vh] gap-4 relative mb-8">
         <div class="capcom-text opacity-0 flex flex-col items-center text-center lg:items-start lg:text-left my-12 gap-8 max-w-[550px]">
@@ -76,13 +47,7 @@ export default component$(() => {
           </div>
         </div>
 
-        <a
-          href="/advisor"
-          class="capcom-cd opacity-0"
-          title="Go to the advisor"
-        >
-          <div class="cd w-[280px] h-[280px] md:w-[450px] md:h-[450px]"></div>
-        </a>
+        <CD />
       </main>
       <footer class="capcom-footer opacity-0 w-full flex flex-col gap-4 my-12 mt-auto items-center text-center">
         <p>

@@ -10,7 +10,7 @@ export const Debug = component$(() => {
   return (
     <>
       {isDebugOpened.value ? (
-        <div class="fixed top-0 left-0 bg-white p-4 z-10 border border-black text-md text-left">
+        <div class="fixed bottom-0 left-0 bg-white p-4 z-10 border border-black text-md text-left">
           <button
             class="btn mb-2 flex w-fit ml-auto"
             onClick$={() => (isDebugOpened.value = false)}
@@ -28,7 +28,7 @@ export const Debug = component$(() => {
         </div>
       ) : (
         <button
-          class="fixed top-0 left-0 bg-white p-4 z-10 border border-black text-md text-left"
+          class="fixed bottom-0 left-0 bg-white p-4 z-10 border border-black text-md text-left"
           onClick$={() => (isDebugOpened.value = true)}
         >
           Open Debug

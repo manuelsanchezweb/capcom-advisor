@@ -295,6 +295,33 @@
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
+  filter: grayscale(85%);
+}
+
+.splide__slide a:hover {
+  filter: grayscale(0);
+}
+
+.splide__slide a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 10;
+}
+
+.splide__slide a:hover::before,
+.splide__slide a:focus::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.splide__slide a:hover .splide__body,
+.splide__slide a:focus .splide__body {
+  opacity: 1;
 }
 
 .splide__slide img {
@@ -306,6 +333,8 @@
 .splide__arrow {
   background: #ffcb08 !important;
   border: 1px solid #2a5daa !important;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .splide__arrow svg {

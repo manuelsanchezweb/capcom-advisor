@@ -2,9 +2,11 @@ import {
   type PropFunction,
   component$,
   useVisibleTask$,
+  $,
 } from '@builder.io/qwik'
 import { timeline, stagger } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
+import { BackButton } from '../back-button/back-button'
 
 const GENRES = [
   'Action',
@@ -52,35 +54,16 @@ export const Step2 = component$(
 
     return (
       <>
-        <button
-          class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={() => handlePreviousStep()}
-        >
-          <svg
-            class="bee bee-icons text-capcomBlue"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.0673 19.1347L7.93266 12L15.0673 4.86534"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </button>
+        <BackButton onClick={$(() => handlePreviousStep())} />
+
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
           What is your favourite genre?
         </h2>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           When I was a child, my sister used to challenge me to Street Fighter 3
           in the arcade machine we had in a bar close to our place.
         </p>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           That is why it motivated me so much{' '}
           <a
             target="_blank"
@@ -99,7 +82,7 @@ export const Step2 = component$(
           </a>
           , but of course nothing AAA.
         </p>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           But again, where were we... and yeah, your favorite genre?
         </p>
         <ul class="capcom-genres flex flex-wrap gap-5 max-w-[350px] opacity-0">

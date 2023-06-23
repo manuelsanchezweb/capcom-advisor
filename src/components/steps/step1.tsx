@@ -2,27 +2,26 @@ import {
   type PropFunction,
   component$,
   useVisibleTask$,
+  $,
 } from '@builder.io/qwik'
 import { timeline, stagger } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
+import { BackButton } from '../back-button/back-button'
+import { useNavigate } from '@builder.io/qwik-city'
 
 export const Step1 = component$(
-  ({
-    onNextStep,
-    handlePreviousStep,
-  }: {
-    onNextStep: PropFunction<() => void>
-    handlePreviousStep: PropFunction<() => void>
-  }) => {
+  ({ onNextStep }: { onNextStep: PropFunction<() => void> }) => {
     const ctx = useGlobalState()
+    const nav = useNavigate()
 
     useVisibleTask$(() => {
+      const button = document.querySelector('.btn--next')
       const logo = document.querySelector('.capcom-logo')
       const title = document.querySelector('h2')
       const paragraphs = document.querySelectorAll('p')
       const name = document.querySelectorAll('.capcom-name')
-      const button = document.querySelector('.btn--next')
       const back = document.querySelector('.btn--back')
+      const navigation = document.querySelector('.capcom-nav')
       if (!title || !paragraphs || !button) return
 
       const sequence: any = [
@@ -36,6 +35,7 @@ export const Step1 = component$(
         [name, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
         [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
         [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
+        [navigation, { opacity: [0, 1], y: [-50, 0] }, { at: 1.7 }],
       ]
 
       timeline(sequence, {})
@@ -43,35 +43,15 @@ export const Step1 = component$(
 
     return (
       <>
-        <button
-          class="btn btn--border p-0 text-capcomBlue btn--back opacity-0 absolute top-12 left-0 rounded-md flex justify-center items-center hover:scale-105 focus:scale-105 transition-transform"
-          onClick$={() => handlePreviousStep()}
-        >
-          <svg
-            class="bee bee-icons text-capcomBlue"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.0673 19.1347L7.93266 12L15.0673 4.86534"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </button>
+        <BackButton onClick={$(() => nav('/'))} />
         <h2 class="text-xl md:text-3xl font-bold opacity-0">
           Welcome to the Capcom Advisor
         </h2>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           A pretty unconventional way to send an unsolicited application for a
           job.
         </p>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           But so it is, I am Manuel, and I studied to be a professional
           translator. At the end, I ended up translating{' '}
           <a
@@ -91,7 +71,7 @@ export const Step1 = component$(
           </a>{' '}
           when I first got to Hamburg.
         </p>
-        <p class="text-md md:text-xl opacity-0">
+        <p class="text-md md:text-lg opacity-0">
           But interviews should go both sides, right?
         </p>
         <div class="capcom-name flex gap-4 flex-col items-start opacity-0">
@@ -110,7 +90,7 @@ export const Step1 = component$(
         </div>
         <button
           disabled={!ctx.name}
-          class="btn btn--border btn--next opacity-0 disabled:opacity-50 disabled:cursor-not-allowed"
+          class="btn btn--border btn--next disabled:opacity-50 disabled:cursor-not-allowed opacity-0"
           onClick$={() => onNextStep()}
         >
           Next step

@@ -36,64 +36,42 @@ html {
 }
 
 .cd {
-  background-image: url('../img/cd/cdAll.png');
-  background-size: cover;
-  cursor: pointer;
   animation: rotate-cd 8s 1 cubic-bezier(0.65, 0.05, 0.36, 1);
-}
-
-.cd:hover {
-  animation-play-state: paused;
-}
-
-.cd:hover {
-  animation-play-state: paused;
 }
 
 @keyframes rotate-cd {
   0% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdAll.png');
   }
   10% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdAll.png');
   }
   20% {
     transform: rotate(5000deg);
-    background-image: url('../img/cd/cdRE4.png');
   }
   30% {
     transform: rotate(5000deg);
-    background-image: url('../img/cd/cdRE4.png');
   }
   40% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdSF6.png');
   }
   50% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdSF6.png');
   }
   60% {
     transform: rotate(5000deg);
-    background-image: url('../img/cd/cdMonsterHunter.png');
   }
   70% {
     transform: rotate(5000deg);
-    background-image: url('../img/cd/cdMonsterHunter.png');
   }
   80% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdDMC.png');
   }
   90% {
     transform: rotate(0deg);
-    background-image: url('../img/cd/cdDMC.png');
   }
   100% {
     transform: rotate(720deg);
-    background-image: url('../img/cd/cdAll.png');
   }
 }
 
