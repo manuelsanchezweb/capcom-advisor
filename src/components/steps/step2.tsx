@@ -4,7 +4,7 @@ import {
   useVisibleTask$,
   $,
 } from '@builder.io/qwik'
-import { timeline, stagger, TimelineDefinition } from 'motion'
+import { timeline, stagger, type TimelineDefinition } from 'motion'
 import { useGlobalState } from '~/ctx/ctx'
 import { BackButton } from '../back-button/back-button'
 import { GENRES } from '~/constants/constants'

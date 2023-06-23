@@ -1,10 +1,4 @@
-import {
-  $,
-  component$,
-  useResource$,
-  useSignal,
-  useVisibleTask$,
-} from '@builder.io/qwik'
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'

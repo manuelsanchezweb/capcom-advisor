@@ -4,10 +4,10 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik'
 import { timeline, stagger, type TimelineDefinition } from 'motion'
-import { getGames } from '~/api/getGames'
+// import { getGames } from '~/api/getGames'
 import { URL } from '~/constants/constants'
 import { useGlobalState } from '~/ctx/ctx'
-import { Game } from '~/types/types'
+// import { Game } from '~/types/types'
 
 export const Step4 = component$(
   ({ onEndApp }: { onEndApp: PropFunction<() => void> }) => {
