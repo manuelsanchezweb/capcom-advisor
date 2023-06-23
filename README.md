@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="./public/capcom.svg" width="300" alt="Capcom Advisor" />
-<img src="./public/capcom-advisor.gif" width="500" alt="Advisor Flow" />
+<img src="./public/capcom-advisor.gif" width="520" alt="Advisor Flow" />
 
 # Unofficial Capcom Advisor
 
