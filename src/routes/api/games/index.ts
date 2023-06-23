@@ -1,6 +1,35 @@
 import type { RequestHandler } from '@builder.io/qwik-city'
-import { promises as fs } from 'fs'
-import path from 'path'
+
+const gamesData = [
+  {
+    id: 1,
+    name: 'Resident Evil 4 Remake',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Montes nascetur ridiculus mus mauris.',
+    categories: ['action, shooting, adventure'],
+    urlOfficial: 'https://www.google.com',
+    platforms: [
+      {
+        name: 'ps5',
+        url: 'https://www.google.com',
+      },
+      {
+        name: 'ps4',
+        url: 'https://www.google.com',
+      },
+    ],
+    assets: {
+      imgBig: {
+        url: '',
+        copyrightUrl: '',
+      },
+      imgSmall: {
+        url: '',
+        copyrightUrl: '',
+      },
+    },
+  },
+]
 
 export const onGet: RequestHandler = async (requestEvent) => {
   // Enable CORS by setting the appropriate headers
@@ -20,13 +49,6 @@ export const onGet: RequestHandler = async (requestEvent) => {
     requestEvent.send(new Response(null))
     return
   }
-
-  const jsonDirectory = path.join(process.cwd(), 'data')
-
-  // Read the json data file data.json
-  const fileContents = await fs.readFile(jsonDirectory + '/data.json', 'utf8')
-
-  const gamesData = JSON.parse(fileContents)
 
   // Send the JSON response
   requestEvent.json(200, gamesData)
