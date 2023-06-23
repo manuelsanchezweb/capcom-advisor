@@ -27,6 +27,7 @@ export const Step3 = component$(
       const platforms = document.querySelectorAll('.capcom-platforms')
       const button = document.querySelector('.btn--next') as HTMLButtonElement
       const back = document.querySelector('.btn--back') as HTMLButtonElement
+      const navigation = document.querySelector('.capcom-nav') as HTMLElement
       if (!title || !paragraphs || !button) return
 
       const sequence: TimelineDefinition = [
@@ -40,6 +41,7 @@ export const Step3 = component$(
         [platforms, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
         [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
         [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
+        [navigation, { opacity: [0, 1], y: [-50, 0] }, { at: 1.7 }],
       ]
 
       timeline(sequence, {})

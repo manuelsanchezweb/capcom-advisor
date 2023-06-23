@@ -1,6 +1,5 @@
 import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { SVGManager } from '~/components/svg/svg-manager'
-import { Debug } from '~/components/debug/debug'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
 import { Navigation } from '~/components/navigation/navigation'
@@ -21,7 +20,6 @@ export default component$(() => {
   const ctx = useGlobalState()
   const step = useSignal(1)
   const { value: games } = useGames()
-  // console.log('These are all the games we have:', games)
 
   useVisibleTask$(({ track }) => {
     track(step)

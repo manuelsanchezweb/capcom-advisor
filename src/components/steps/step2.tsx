@@ -25,6 +25,7 @@ export const Step2 = component$(
       const paragraphs = document.querySelectorAll('p')
       const button = document.querySelector('.btn--next')
       const genres = document.querySelectorAll('.capcom-genres')
+      const navigation = document.querySelector('.capcom-nav') as HTMLElement
       const back = document.querySelector('.btn--back') as HTMLButtonElement
       if (!title || !paragraphs || !button) return
 
@@ -39,6 +40,7 @@ export const Step2 = component$(
         [genres, { opacity: [0, 1], y: [-50, 0] }, { at: 1.1 }],
         [button, { opacity: [0, 1], y: [-50, 0] }, { at: 1.3 }],
         [back, { opacity: [0, 1], y: [-50, 0] }, { at: 1.5 }],
+        [navigation, { opacity: [0, 1], y: [-50, 0] }, { at: 1.7 }],
       ]
 
       timeline(sequence, {})

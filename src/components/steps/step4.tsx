@@ -60,13 +60,23 @@ export const Step4 = component$(
                   class=" flex flex-col-reverse md:flex-row gap-4 md:gap-10 my-8"
                 >
                   <figure>
-                    <img
-                      src={`${URL}${game.assets.imgSmall.url}`}
-                      alt={game.name}
-                      class="md:min-w-[350px]"
-                      height={300}
-                      width={500}
-                    />
+                    <a
+                      target="_blank"
+                      rel="noopener nofollow"
+                      href={game.urlOfficial}
+                      title={`Check page of ${game.name}`}
+                      class="group"
+                    >
+                      <picture class="flex overflow-hidden">
+                        <img
+                          src={`${URL}${game.assets.imgSmall.url}`}
+                          alt={game.name}
+                          class="md:min-w-[350px] group-hover:scale-115 group-focus:scale-115 transition-transform"
+                          height={300}
+                          width={500}
+                        />
+                      </picture>
+                    </a>
                     <figcaption class="text-left text-xs my-1">
                       Image from{' '}
                       <a
