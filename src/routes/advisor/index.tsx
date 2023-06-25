@@ -67,7 +67,7 @@ export default component$(() => {
       <div class="w-full relative min-h-screen">
         <Navigation />
         {/* <Debug /> */}
-        <div class="flex flex-col items-center justify-center gap-6 text-center max-w-[750px] mx-auto mt-20 mb-12">
+        <div class="flex flex-col items-center justify-center gap-6 text-center max-w-[750px] mx-auto mt-20 mb-12 min-h-[70vh]">
           <SVGManager
             svg="capcom"
             classCustom="capcom-logo w-[230px] md:w-[330px] h-auto opacity-0"
