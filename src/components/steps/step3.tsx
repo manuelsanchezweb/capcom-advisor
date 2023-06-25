@@ -113,22 +113,3 @@ export const Step3 = component$(
     )
   }
 )
-
-function renderConsoleIcon(platform: string) {
-  switch (platform) {
-    case 'switch':
-      return <SVGManager svg="switch" />
-    case 'xbox-one':
-      return <SVGManager svg="xbox-one" />
-    case 'xbox-series':
-      return <SVGManager svg="xbox-series" />
-    case 'ps5':
-      return <SVGManager svg="ps5" />
-    case 'ps4':
-      return <SVGManager svg="ps4" />
-    case 'steam':
-      return <SVGManager svg="steam" />
-    default:
-      return null
-  }
-}

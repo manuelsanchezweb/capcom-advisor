@@ -77,7 +77,7 @@ export default component$(() => {
         <div class="splide__track !overflow-visible">
           <ul class="splide__list h-screen">
             {games.map((game) => (
-              <li class="splide__slide h-full w-full">
+              <li key={game.id} class="splide__slide h-full w-full">
                 <a
                   class="cursor-pointer group w-full h-full flex transition-all duration-300"
                   href={game.urlOfficial}
