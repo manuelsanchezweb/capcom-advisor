@@ -115,7 +115,6 @@ export const Step4 = component$(
           <button class="btn btn--border btn--next" onClick$={() => onEndApp()}>
             Launch the advisor again
           </button>
-          <a href="/latest-games/">See latest games</a>
         </div>
       </>
     )

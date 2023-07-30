@@ -58,26 +58,8 @@ export const Step2 = component$(
           in the arcade machine we had in a bar close to our place.
         </p>
         <p class="text-md md:text-lg opacity-0">
-          That is why it motivated me so much{' '}
-          <a
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://www.manu-sanchez.com/specialities/coding.html"
-          >
-            to learn to code
-          </a>{' '}
-          and create games on my own and cool pages like this one. I have
-          created some{' '}
-          <a
-            rel="nofollow noopener"
-            href="https://pizzalegends-rpg.netlify.app/"
-          >
-            small games following some tutorials
-          </a>
-          , but of course nothing AAA.
-        </p>
-        <p class="text-md md:text-lg opacity-0">
-          But again, where were we... and yeah, your favorite genre?
+          Good old times... But again, where were we... and yeah, your favorite
+          genre?
         </p>
         <ul class="capcom-genres flex flex-wrap justify-center md:justify-start gap-5 max-w-[550px] opacity-0 border border-capcomBlack p-7">
           {GENRES.map((genre) => (

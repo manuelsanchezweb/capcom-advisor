@@ -41,9 +41,6 @@ export default component$(() => {
             <a class="btn btn--border" href="/advisor">
               Go to the Advisor
             </a>
-            <a class="link" href="/latest-games/">
-              See latest games
-            </a>
           </div>
         </div>
 

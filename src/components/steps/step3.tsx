@@ -58,31 +58,6 @@ export const Step3 = component$(
           But recently I’ve been playing Resident Evil 4 Remake in PS5.
         </p>
         <p class="text-md md:text-lg opacity-0">
-          Since 2021 I decided to work part-time in my current job as a Frontend
-          Team Lead to be able to have some time to create side projects, like
-          creating content in Spanish on{' '}
-          <a
-            target="_blank"
-            title="YouTube Channel"
-            href="https://www.youtube.com/@manuelsanchezweb"
-          >
-            YouTube
-          </a>{' '}
-          and{' '}
-          <a
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://www.udemy.com/user/manuel-sanchez-324/"
-          >
-            Udemy
-          </a>
-          . I can remain creative and updated with the latest technologies.
-        </p>
-        <p class="text-md md:text-lg opacity-0">
-          Also that gives me more quality time to spend with friends, family,
-          doing kickboxing and for doing non-productive stuff.
-        </p>
-        <p class="text-md md:text-lg opacity-0">
           You know now how I spend my time, but... how do you usually chill,{' '}
           {ctx.name}?
         </p>
