@@ -1,11 +1,16 @@
-import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import {
+  $,
+  component$,
+  useComputed$,
+  useSignal,
+  useVisibleTask$,
+} from '@builder.io/qwik'
 import { SVGManager } from '~/components/svg/svg-manager'
 import { Step1, Step2, Step3, Step4 } from '~/components/steps'
 import { useGlobalState } from '~/ctx/ctx'
 import { Navigation } from '~/components/navigation/navigation'
 import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { getGames } from '~/api/getGames'
-import { getGamesForUser } from '~/functions/functions'
 
 export const useGames = routeLoader$(async () => {
   try {
@@ -21,10 +26,24 @@ export default component$(() => {
   const step = useSignal(1)
   const { value: games } = useGames()
 
+  const gamesForPlayer = useComputed$(() => {
+    if (games.length === 0) return []
+
+    const gamesForPlayer = games.filter((game) =>
+      game.genres.includes(ctx.genre)
+    )
+
+    gamesForPlayer.filter((game) =>
+      game.platforms.some((platform) => platform.name === ctx.platform)
+    )
+
+    return gamesForPlayer
+  })
+
   useVisibleTask$(({ track }) => {
     track(step)
 
-    ctx.games = getGamesForUser(games, ctx.genre, ctx.platform)
+    ctx.games = gamesForPlayer.value
   })
 
   const handleNextStep = $(() => {
