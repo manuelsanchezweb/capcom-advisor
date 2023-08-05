@@ -54,7 +54,7 @@ export const Step1 = component$(
         <div class="capcom-name flex gap-4 flex-col items-start opacity-0">
           <label for="name">Your name:</label>
           <input
-            class="border border-black rounded-sm py-3 px-4"
+            class="border border-black rounded-sm py-3 px-4 text-black"
             placeholder="Max Mustermann"
             type="text"
             name="name"

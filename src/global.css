@@ -15,13 +15,15 @@
  */
 
 :root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
+  --capcom-text: #090002;
+  --capcom-bg: #e5e7eb;
+  --capcom-yellow: #ffcb08;
+  --capcom-blue: #0047a0;
+}
+
+[data-theme='dark'] {
+  --capcom-text: #e5e7eb;
+  --capcom-bg: #121212;
 }
 
 html {
@@ -35,52 +37,13 @@ html {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-.capcom-cd {
-  background-image: url('../img/cdAll.png');
-  animation: rotate-cd 8s 1 cubic-bezier(0.65, 0.05, 0.36, 1);
-  background-size: cover;
-  cursor: pointer;
+body {
+  background-color: var(--capcom-bg);
+  color: var(--capcom-text);
 }
 
-.capcom-cd:hover {
-  animation-play-state: paused;
-}
-
-@keyframes rotate-cd {
-  0% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(5000deg);
-  }
-  30% {
-    transform: rotate(5000deg);
-  }
-  40% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  60% {
-    transform: rotate(5000deg);
-  }
-  70% {
-    transform: rotate(5000deg);
-  }
-  80% {
-    transform: rotate(0deg);
-  }
-  90% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(720deg);
-  }
+a:not([class]) {
+  @apply text-capcomBlue font-semibold hover:underline focus:underline;
 }
 
 @layer components {
@@ -103,8 +66,4 @@ html {
   .link {
     @apply text-capcomBlue font-semibold hover:underline focus:underline;
   }
-}
-
-a:not([class]) {
-  @apply text-capcomBlue font-semibold hover:underline focus:underline;
 }

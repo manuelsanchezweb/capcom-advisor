@@ -7,9 +7,10 @@ module.exports = {
         capcomBlue: '#2A5DAA',
         capcomRed: '#B3251F',
         capcomGreen: '#366E24',
-        capcomBlack: '#090002',
         capcomYellow: '#FFCB08',
         capcomGray: '#D9D9D9',
+        capcomText: '#090002',
+        capcomBg: '#FFFFFF',
         capcomWhite: '#FFFFFF',
       },
       grayscale: {

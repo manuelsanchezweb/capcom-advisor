@@ -1,7 +1,7 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
 import { SVGManager } from '~/components/svg/svg-manager'
-import { timeline } from 'motion'
+import { type TimelineDefinition, timeline } from 'motion'
 import { CD } from '~/components/cd/cd'
 import { Navigation } from '~/components/navigation/navigation'
 
@@ -11,11 +11,11 @@ export default component$(() => {
     const cd = document.querySelector('.capcom-cd')
     const nav = document.querySelector('.capcom-nav')
     const footer = document.querySelector('.capcom-footer')
-    if (!text || !cd) return
+    if (!text || !cd || !nav || !footer) return
 
-    const sequence: any = [
+    const sequence: TimelineDefinition = [
       [text, { opacity: [0, 1], x: [-100, 0] }, { at: 0.1 }],
-      [cd, { opacity: [0, 1], y: [100, 0] }, { at: 0.3 }],
+      [cd, { opacity: [0, 1], x: [100, 0] }, { at: 0.3 }],
       [nav, { opacity: [0, 1], y: [100, 0] }, { at: 0.5 }],
       [footer, { opacity: [0, 1], y: [-100, 0] }, { at: 0.7 }],
     ]

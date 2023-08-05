@@ -66,10 +66,10 @@ export const Step2 = component$(
             <li
               key={genre.id}
               class={{
-                '!bg-capcomBlue text-capcomWhite cursor-not-allowed':
+                '!bg-capcomBlue !text-capcomWhite cursor-not-allowed':
                   ctx.genre === genre.slug,
                 'cursor-pointer': ctx.genre !== genre.slug,
-                'px-6 py-3 border border-capcomBlue bg-capcomYellow hover:text-capcomWhite hover:bg-capcomBlue':
+                'px-6 py-3 border border-capcomBlue bg-capcomYellow text-capcomText hover:text-capcomWhite hover:bg-capcomBlue':
                   true,
               }}
               onClick$={() => (ctx.genre = genre.slug)}

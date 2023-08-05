@@ -1,9 +1,11 @@
 import { component$ } from '@builder.io/qwik'
 import { SVGManager } from '../svg/svg-manager'
+import { ModeToggler } from '../mode-toggle/mode-toggle'
 
 export const Navigation = component$(() => {
   return (
-    <nav class="capcom-nav opacity-0 w-full flex justify-end gap-4 mt-12">
+    <nav class="capcom-nav opacity-0 w-full flex items-center justify-end gap-4 mt-12">
+      <ModeToggler />
       {/* // LinkedIn  */}
       <a
         class="btn--icon"
