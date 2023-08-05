@@ -22,9 +22,9 @@ export const ModeToggler = component$(() => {
   return (
     <button id="toggler" aria-label="Switch Mode" class="btn--icon">
       {theme.theme == 'light' ? (
-        <IconSun classCustom="text-capcomBlue h-6 w-6" />
-      ) : (
         <IconMoon classCustom="text-capcomBlue h-6 w-6" />
+      ) : (
+        <IconSun classCustom="text-capcomBlue h-6 w-6" />
       )}
     </button>
   )
